@@ -1,0 +1,3 @@
+This file contains significant changes, while used with GitHub smaller changes are noted in the system. 
+
+11.1 - Enclosure and mounting information added
