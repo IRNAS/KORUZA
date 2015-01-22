@@ -15,4 +15,4 @@ The enclosure can be manufactured with the following methods:
 
 
 ### Lid / cover
-The back cover for the enclosure is 3D printed and made to house electonics. Designed in OpenSCAD and using (https://github.com/IRNAS/OpenSCAD-lib)[IRNAS OpenSCAD-Lib] for common mechanical elements. 3D print from ABS, attach to enclosure with M3 screws.
+The back cover for the enclosure is 3D printed and made to house electonics. Designed in OpenSCAD and using [IRNAS OpenSCAD-Lib](https://github.com/IRNAS/OpenSCAD-lib) for common mechanical elements. 3D print from ABS, attach to enclosure with M3 screws.
