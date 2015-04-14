@@ -355,7 +355,7 @@
            
            <logic_part order="10">
              <part_name>SFP extension plug</part_name>
-             <file><url>files/KoruzaSFPextensionPlug.pdf</url></file>
+             <file><url>files/KoruzaSFPextensionPlug.PDF</url></file>
              <options>
                <option> <part_name/> </option>
              </options>
@@ -363,7 +363,7 @@
            
            <logic_part order="11">
              <part_name>SFP extension socket</part_name>
-             <file><url>files/KoruzaSFPextensionSocket.pdf</url></file>
+             <file><url>files/KoruzaSFPextensionSocket.PDF</url></file>
              <options>
                <option> <part_name/> </option>
              </options>
@@ -764,7 +764,7 @@
            
            <logic_part order="18">
              <part_name>Koruza shield</part_name>
-             <file><url>files/KoruzaShield.pdf</url></file>
+             <file><url>files/KoruzaShield.PDF</url></file>
              <options>
                <option> <part_name/> </option>
              </options>
