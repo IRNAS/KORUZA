@@ -1,0 +1,333 @@
+#slide {
+
+    background-color: white;
+    height: auto;
+    width: 97vw;
+    margin-top: 0;
+    margin-left: 1vw;
+    font-family: "Verdana";
+    font-size: 12px;
+    color: white;
+}
+
+#instructions_title {
+    background-color: rgba(73,113,147,1);
+    height: auto;
+    width: 100%;
+    color: white;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    float: left;
+}
+
+#instructions_video {
+    background-color: white;
+     height: 43vh;
+    width: 30%;;
+    float: left;
+    margin-left: 0;
+    margin-top: 1vh;
+    margin-bottom:0;
+
+}
+
+#instructions_description{
+    background-color: rgba(95,156,208,1);
+    height: 43vh;
+    width: 69%;
+    float: right;
+    margin-right: 0;
+    margin-top: 1vh;
+    margin-bottom:0;
+
+}
+
+#instructions_parts {
+    background-color: white;
+    height: auto;
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-top: 1vh;
+    margin-bottom:0;
+
+}
+
+#parts_title {
+    background-color: rgba(41,60,78,1);
+    height: 6vh;
+    width: 100%;
+    color: white;
+    margin-top:1vh;
+    float: left;
+}
+
+#instructions_tools {
+    background-color: white;
+    height: auto%;
+    width: 100%;
+    float: right;
+    margin-right: 0;
+    margin-top: 1vh;
+    margin-bottom:0;
+
+}
+
+#tools_title {
+    background-color: rgba(0,122,5,0.7);
+    height: 6vh;
+    width: 100%;
+    color: white;
+    margin-top: 1vh;
+    float: right;
+}
+
+#system_image {
+    background-color: white;
+    height: auto;
+    width: 100%;
+    margin-top: 2vh;
+    margin-bottom: 0;
+    float: left;
+}
+
+
+
+#module_container {
+    display: flex;
+    background-color: white;
+    height: auto;
+    width: 100%;
+    float: left;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom:1vh;
+}
+
+.system {
+    width:100%;
+    height: auto;
+
+}
+
+.system_modules{
+    flex-grow: <1>;
+    flex-shrink: <1>;
+    height: 100%;
+    width: 13.685%;
+    float: left;
+    margin-right: .4%;
+    margin-top: 0;
+    margin-left: 0.2%;
+
+
+}
+
+
+.module {
+
+    background-color: white;
+    width: 97vw;
+    height: auto;
+    margin-top: 0;
+    margin-left: 1vw;
+    font-family: "Verdana";
+    font-size: 12px;
+    color: white;
+}
+
+.module_title {
+    height: auto;
+    width: 100%;
+    color: white;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    float: left;
+}
+
+.module_description{
+    height: 43vh;
+    width: 69%;
+    float: right;
+    margin-right: 0;
+    margin-top: 1vh;
+    margin-bottom:0;
+
+}
+
+.module_parts {
+    background-color: white;
+    height: auto;
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-top: 1vh;
+    margin-bottom:0;
+
+}
+
+.module_parts_table {
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom:0;
+    float: left;
+
+}
+
+.step_image {
+    background-color: white;
+     height: 45vh;
+    width: 29%;;
+    float: left;
+    margin-left: 0;
+    margin-top: 1vh;
+    margin-bottom:0;
+
+}
+
+.image {
+    width:100%;
+    height: auto;
+
+}
+
+.image1 {
+    width:auto;
+    height: 100%;
+
+}
+
+.step_description{
+
+    height: 45vh;
+    width: 70%;
+    float: right;
+    margin-right: 0;
+    margin-top: 1vh;
+    margin-bottom:0;
+
+
+}
+
+.step_description_text{
+
+    height: auto;
+    width: 97%;
+    float: left;
+    margin-right: 0;
+    margin-left: 1vw;
+    margin-top: .5vh;
+    margin-bottom:0;
+
+
+}
+.step_description_parts{
+
+    height: auto;
+    width: 97%;
+    float: left;
+    margin-right: 0;
+    margin-left: 1vw;
+    margin-top: .5vh;
+    margin-bottom:0;
+
+
+}
+
+.table_parts {
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom:0;
+    float: left;
+
+}
+
+.step_table{
+  border: 2px solid black ;
+    padding: 5px;
+    border-collapse: collapse;
+}
+
+.sub_module_title {
+    height: 6vh;
+    width: 100%;
+    color: white;
+    margin-top:1vh;
+    float: left;
+}
+
+.ss{
+    border: 2px solid black ;
+    padding: 5px;
+
+     vertical-align: top;
+}
+
+.ss1{
+    border: 2px solid black ;
+    padding: 3px;
+    font-size:14px;
+     vertical-align: top;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    
+}
+
+table, th, td {
+    border: 2px solid white;
+    padding: 5px;
+
+     vertical-align: top;
+}
+
+th {
+   font-size:22px;
+}
+td {
+   font-size:14px;
+}
+
+
+
+h1 {
+    text-align: center;
+    font-size: 72px;
+    margin:0; 
+    padding:0;
+    
+}
+h2 {
+    text-align: center;
+    font-size: 36px;
+    margin:0; 
+    padding:0;
+    
+}
+h3 {
+    text-align: left;
+    font-size: 18px;
+     margin-left: 5px;
+    margin-right: 5px; 
+    padding:0;
+    
+}
+
+p {
+    padding:0;
+    text-lign: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 17px;
+
+}
+
+a {
+ color: white;
+}

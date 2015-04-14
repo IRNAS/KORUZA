@@ -1,0 +1,1574 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="instructions_koruza.xsl"?>
+<instructions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="instructions_koruza-schema.xsd">
+
+<name>INSTRUCTIONS KORUZA</name>
+<description>How to assemble the system...General instructions and pointers.</description>
+<video>
+  	<description>Intro video</description>
+        <url>http://www.youtube.com/embed/yq6hBNCzH10</url>
+
+</video>
+
+<system_steps>
+  <description>Here we explain how to put all modules together...</description>
+  <steps>
+    <step order="1">
+      <description>Step one...</description>
+    </step>
+    <step order="2">
+      <description>Step two...</description>
+    </step>
+  </steps>
+  
+  <module_steps order="1">
+    <module> LEGAL</module>
+    <description>Here we explain how to assamble the first module from its sub-modules</description>
+  </module_steps>
+  
+  <module_steps order="2">
+    <module> OPTICAL - DATA</module>
+    <description>Here we explain how to assamble the first module from its sub-modules</description>
+    <steps>
+      <step order="1">
+        <description>Step one...</description>
+      </step>
+      <step order="2">
+        <description>Step two...</description>
+      </step>
+    </steps>
+    
+    <sub_module_steps order="1">
+      <sub_module> TRANSCEIVER</sub_module>
+      <description>Here we explain how to assamble fist sub-module of the optical-data module.</description>
+      <steps>
+        <step order="1">
+          <description>Step one...</description>
+
+        </step>
+        <step order="2">
+          <description>Step two...</description>
+        </step>
+      </steps>
+      
+      <logic_parts>
+           <logic_part order="1">
+             <part_name>SFP module A</part_name>
+             <description>SFP 1.25G BIDI Tx1310/Rx1550nm 40km SC Connector DDM Extended temperature range</description>
+             <quantity>1</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="2">
+             <part_name>SFP module B</part_name>
+             <description>SFP 1.25G BIDI Tx1550/Rx1310nm 40km SC Connector DDM Extended temperature range</description>
+             <quantity>1</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="3">
+             <part_name>Alu mount</part_name>
+             <description>Precise aluminium mounting piece acting as a heat-sink2</description>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+
+
+         </logic_parts>
+    </sub_module_steps>
+    
+    <sub_module_steps order="2">
+      <sub_module> COLLIMATION OPTICS</sub_module>
+      <description>Here we explain how to assamble the sub-module of the optical-data module.</description>
+      <steps>
+        <step order="1">
+          <description>Step one...</description>
+        </step>
+        <step order="2">
+          <description>Step two...</description>
+        </step>
+      </steps>
+      
+      <logic_parts>
+           <logic_part order="1">
+             <part_name>Plano-convex lens</part_name>
+             <description>50mm round plano-covex lens F=100mm.</description>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+      </logic_parts>
+    </sub_module_steps>
+    
+    <sub_module_steps order="3">
+      <sub_module> SFP MONITORING</sub_module>
+      <description>Here we explain how to assamble the sub-module of the optical-data module.</description>
+      <steps>
+        <step order="1">
+          <description>Get Koruza SFP extension PCB panel consisting of two larger SFP socket boards and three smaller SFP plug boards.</description>
+          <image>img/img2_3_1.jpg</image>
+                  <step_parts>
+            <step_part order="1">
+              <part>1</part>
+              <quantity>2</quantity>
+            </step_part>
+            <step_part order="2">
+              <part>2</part>
+              <quantity>2</quantity>
+            </step_part>
+            <step_part order="3">
+              <part>10</part>
+              <quantity>0</quantity>
+            </step_part>
+            <step_part order="4">
+              <part>11</part>
+              <quantity>0</quantity>
+            </step_part>
+            <step_part order="5">
+              <part>12</part>
+              <quantity>0</quantity>
+            </step_part>
+          </step_parts>
+        </step>
+        <step order="2">
+          <description>Solder the SFP socket to the boards, make sure it is oriented correctly, with the notch away from the rest of connectors.</description>
+          <image>img/img2_3_2.jpg</image>
+                  <step_parts>
+            <step_part order="1">
+              <part>1</part>
+              <quantity>2</quantity>
+            </step_part>
+            <step_part order="2">
+              <part>9</part>
+              <quantity>2</quantity>
+            </step_part>
+          </step_parts>
+        </step>
+		<step order="3">
+          <description>Solder the SATA connector to SFP socket boards, make sure to solder the mounting legs as well.</description>
+          <image>img/img2_3_3.jpg</image>
+        	  <step_parts>
+            <step_part order="1">
+              <part>1</part>
+              <quantity>2</quantity>
+            </step_part>
+            <step_part order="2">
+              <part>7</part>
+              <quantity>2</quantity>
+            </step_part>
+          </step_parts>
+        </step>
+		<step order="4">
+          <description>Solder the SATA connector to SFP plug boards, make sure to solder the mounting legs as well.</description>
+          <image>img/img2_3_4.jpg</image>
+        	  <step_parts>
+            <step_part order="1">
+              <part>2</part>
+              <quantity>2</quantity>
+            </step_part>
+            <step_part order="2">
+              <part>7</part>
+              <quantity>2</quantity>
+            </step_part>
+          </step_parts>
+        </step>
+		<step order="5">
+          <description>Solder the SFP cage to SFP socket boards.</description>
+          <image>img/img2_3_5.jpg</image>
+        	  <step_parts>
+            <step_part order="1">
+              <part>2</part>
+              <quantity>2</quantity>
+            </step_part>
+            <step_part order="2">
+              <part>8</part>
+              <quantity>2</quantity>
+            </step_part>
+          </step_parts>
+        </step>
+		<step order="6">
+          <description>Solder IDC connectors to the boards, ckeck their orientation before soldering!</description>
+          <image>img/img2_3_6.jpg</image>
+        	  <step_parts>
+            <step_part order="1">
+              <part>1</part>
+              <quantity>2</quantity>
+            </step_part>
+			<step_part order="2">
+              <part>2</part>
+              <quantity>2</quantity>
+            </step_part>
+            <step_part order="3">
+              <part>3</part>
+              <quantity>6</quantity>
+            </step_part>
+          </step_parts>
+        </step>
+		<step order="7">
+          <description>3D print a sleeve for the SFP extension plug</description>
+          <image>img/img2_3_7.jpg</image>
+                  <step_parts>
+            <step_part order="1">
+              <part>2</part>
+              <quantity>2</quantity>
+            </step_part>
+          </step_parts>
+        </step>
+		<step order="8">
+          <description>Connect the SFP socket and plug board with SATA cable.</description>
+          <image>img/img2_3_8.jpg</image>
+                  <step_parts>
+            <step_part order="1">
+              <part>1</part>
+              <quantity>2</quantity>
+            </step_part>
+			<step_part order="2">
+              <part>2</part>
+              <quantity>2</quantity>
+            </step_part>
+            <step_part order="3">
+              <part>6</part>
+              <quantity>2</quantity>
+            </step_part>
+          </step_parts>
+        </step>
+		<step order="9">
+          <description>Assemble 20cm long IDC 10 cables.</description>
+          <image>img/img2_3_9.jpg</image>
+                  <step_parts>
+            <step_part order="1">
+              <part>3</part>
+              <quantity>4</quantity>
+            </step_part>
+			<step_part order="2">
+              <part>5</part>
+              <quantity>2</quantity>
+            </step_part>
+          </step_parts>
+        </step>
+		<step order="10">
+          <description>Connect SFP socket and plug boards with the IDC cable.</description>
+          <image>img/img2_3_10.jpg</image>
+                  <step_parts>
+            <step_part order="1">
+              <part>1</part>
+              <quantity>2</quantity>
+            </step_part>
+			<step_part order="2">
+              <part>2</part>
+              <quantity>2</quantity>
+            </step_part>
+          </step_parts>
+        </step>
+      </steps>
+      
+      <logic_parts>
+          <logic_part order="1">
+             <part_name>Socket PCB</part_name>
+             <description>SFP extension PCB</description>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="2">
+             <part_name>Plug SFP</part_name>
+             <description>SFP extension PCB</description>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="3">
+             <part_name>IDC 10 connector receptacle</part_name>
+             <description>CONNECTOR, RECEPTACLE, IDC, 2.54MM, 10P </description>
+             <quantity>8</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="4">
+             <part_name>IDC 10 connector header</part_name>
+             <description>HEADER, THT, VERTICAL, 2.54MM, 10WAY </description>
+             <quantity>8</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="5">
+             <part_name>IDC 10 cable</part_name>
+             <description> RIBBON CABLE, 10WAY, 28AWG, 300V, PER M </description>
+             <quantity>1</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="6">
+             <part_name>SATA cable</part_name>
+             <description>10cm SATA cable right-angle on one side</description>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="7">
+            <part_name>SATA connector</part_name>
+             <description>PLUG, R/A, SATA TYPE (REVERSE) </description>
+             <quantity>4</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="8">
+             <part_name>SFP cage</part_name>
+             <description>SFP, SINGLE CAGE, 1 PORT </description>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="9">
+             <part_name>SFP connector</part_name>
+             <description>CONNECTOR, SFP, RCPT, 20POS, SMT </description>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+           
+           <logic_part order="10">
+             <part_name>SFP extension plug</part_name>
+             <file><url>files/KoruzaSFPextensionPlug.pdf</url></file>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+           
+           <logic_part order="11">
+             <part_name>SFP extension socket</part_name>
+             <file><url>files/KoruzaSFPextensionSocket.pdf</url></file>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+           
+           <logic_part order="12">
+             <part_name>SFP extension panel gerber</part_name>
+             <file><url>files/KoruzaSFPextensionPanelGerber.zip</url></file>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+        </logic_parts>
+    </sub_module_steps>
+  </module_steps>
+
+  <module_steps order="3">
+    <module> OPTICAL - AIMING</module>
+    <description>Here we explain how to assamble the OPTICAL - AIMING module from its sub-modules</description>
+    <steps>
+      <step order="1">
+        <description>Step one...</description>
+      </step>
+      <step order="2">
+        <description>Step two...</description>
+      </step>
+    </steps>
+    
+    <sub_module_steps order="1">
+      <sub_module> VISIBLE LASER</sub_module>
+      <description>Here we explain how to assamble the sub-module VISIBLE LASER of the optical-data module.</description>
+      <steps>
+        <step order="1">
+          <description>Step one...</description>
+        </step>
+        <step order="2">
+          <description>Step two...</description>
+        </step>
+      </steps>
+      
+      <logic_parts>
+           <logic_part order="1">
+             <part_name>Green laser module</part_name>
+             <description>10mW 532nm less then 1.0 mrad divergence, good quality</description>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="2">
+             <part_name>Spring</part_name>
+             <description>Spring 6mm outer, 1mm thick, 12mm long, compression to 7mm, usually used in clips for hanging clothes</description>
+             <quantity>8</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="3">
+             <part_name>Screw</part_name>
+             <description>Screw HEX M3 30mm DIN912</description>
+             <quantity>4</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="4">
+             <part_name>Nut</part_name>
+             <description>Square nut M3 DIN562</description>
+             <quantity>4</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="5">
+             <part_name>Laser pointer alignment wedge</part_name>
+             <description>3D printed</description>
+             <quantity>4</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+         </logic_parts>
+    </sub_module_steps>
+    
+    <sub_module_steps order="2">
+      <sub_module> SYSTEM MANAGEMENT COMMUNICATION</sub_module>
+      <description>Here we explain how to assamble the sub-module SYSTEM MANAGEMENT COMMUNICATION of the optical-data module.</description>
+      <steps>
+        <step order="1">
+          <description>Step one...</description>
+        </step>
+        <step order="2">
+          <description>Step two...</description>
+        </step>
+      </steps>
+      
+      <logic_parts>
+           <logic_part order="1">
+             <part_name>NRF24L01+</part_name>
+             <description/>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="2">
+             <part_name>IDC 10 connector</part_name>
+             <description/>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="3">
+             <part_name>IDC 10 cable</part_name>
+             <description/>
+             <quantity>4</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+         </logic_parts>
+    </sub_module_steps>
+
+  </module_steps>
+  
+  <module_steps order="4">
+    <module> ELECTRONICS</module>
+    <description>Here we explain how to assamble the ELECTRONICS module from its sub-modules</description>
+    <steps>
+      <step order="1">
+        <description>Step one...</description>
+      </step>
+      <step order="2">
+        <description>Step two...</description>
+      </step>
+    </steps>
+    
+    <sub_module_steps order="1">
+      <sub_module> POWER</sub_module>
+      <description>Here we explain how to assamble the sub-module of the optical-data module.</description>
+      <steps>
+        <step order="1">
+          <description>Step one...</description>
+        </step>
+        <step order="2">
+          <description>Step two...</description>
+        </step>
+      </steps>
+      
+      <logic_parts>
+           <logic_part order="1">
+             <part_name>Waterproof eth</part_name>
+             <description/>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="2">
+             <part_name>Waterproof eth + pwr</part_name>
+             <description/>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="3">
+             <part_name>Regulator</part_name>
+             <description/>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="4">
+             <part_name>2.1mm jack cable</part_name>
+             <description>Cable for the media converter</description>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+         </logic_parts>
+    </sub_module_steps>
+    
+    <sub_module_steps order="2">
+      <sub_module>NETWORK</sub_module>
+      <description>Here we explain how to assamble the sub-module of the optical-data module.</description>
+      <steps>
+        <step order="1">
+          <description>Step one...</description>
+        </step>
+        <step order="2">
+          <description>Step two...</description>
+        </step>
+      </steps>
+      
+      <logic_parts>
+           <logic_part order="1">
+             <part_name>Media converter</part_name>
+             <description>SFP media converter supporting 1000Mbps.</description>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="2">
+             <part_name>WiFi router</part_name>
+             <description>WiFi router for monitoring and control.</description>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+         </logic_parts>
+    </sub_module_steps>
+    
+    <sub_module_steps order="3">
+      <sub_module>CONTROL INTERFACE</sub_module>
+      <description>Here we explain how to assamble the sub-module of the optical-data module.</description>
+      <steps>
+        <step order="1">
+          <description>Obtain the control board PCBs either from a supplier or get them manufactured from available gerber files.</description>
+          <image>img/img4_3_1.jpg</image>
+        </step>
+        <step order="2">
+          <description>Populate the circuit board according to the schematic. Note that some components do not need to be installed.</description>
+          <image>img/img4_3_2.jpg</image>
+        </step>
+      </steps>
+      
+      <logic_parts>
+           <logic_part order="1">
+             <part_name>Processor board</part_name>
+             <description>TEXAS INSTRUMENTS  EK-TM4C123GXL  TM4C123G, LAUNCHPAD, TIVA C, EVAL KIT.</description>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="2">
+             <part_name>Control shield</part_name>
+             <description>KORUZA shield v3</description>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="3">
+             <part_name>Dual header</part_name>
+             <description>2.54mm header 2x10.</description>
+             <quantity>4</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="4">
+             <part_name>Single header </part_name>
+             <description>2.54mm header 2x6</description>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="5">
+             <part_name>Motor connector</part_name>
+             <description>B5B-XH-A (LF)(SN)  HEADER, THT, VERTICAL, 2.5MM, 5WAY .</description>
+             <quantity>6</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="6">
+             <part_name>Screw terminal</part_name>
+             <description>5.08mm pitch screw terminal.</description>
+             <quantity>4</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="7">
+             <part_name>1Wire thermometer</part_name>
+             <description>DS18B20 waterpproof.</description>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="8">
+             <part_name>Zener diode 3.6V</part_name>
+             <description>D1 – DIODE, ZENER, 0.5W, 3.6V</description>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="9">
+             <part_name>Resistor 500k</part_name>
+             <description>SMD0805</description>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="10">
+             <part_name>Resistor 100k</part_name>
+             <description>SMD0805</description>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="11">
+             <part_name>Resistor 10k</part_name>
+             <description>SMD0805</description>
+             <quantity>8</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="12">
+             <part_name>Resistor 0k</part_name>
+             <description>SMD0805</description>
+             <quantity>8</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="13">
+             <part_name>Resistor 4k7</part_name>
+             <description>SMD0805</description>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="14">
+             <part_name>Resistor 47k</part_name>
+             <description>SMD0805</description>
+             <quantity>4</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="15">
+             <part_name>Accelerometer MMA7660</part_name>
+             <description>MEMS accelerometer</description>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="16">
+             <part_name>Transistor array</part_name>
+             <description>ULN2003 darlington array for driving steppers.</description>
+             <quantity>4</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="17">
+             <part_name>Transistor</part_name>
+             <description>DMG6602SVT for laser and media converter.</description>
+             <quantity>4</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+           
+           <logic_part order="18">
+             <part_name>Koruza shield</part_name>
+             <file><url>files/KoruzaShield.pdf</url></file>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+           
+           <logic_part order="19">
+             <part_name>Koruza shield gerber</part_name>
+             <file><url>files/KoruzaShieldGerber.zip</url></file>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+
+
+
+         </logic_parts>
+    </sub_module_steps>
+    
+    <sub_module_steps order="4">
+      <sub_module>SFP MONITORING</sub_module>
+      <description>Here we explain how to assamble the sub-module of the optical-data module.</description>
+      <steps>
+        <step order="1">
+          <description>Step one...</description>
+        </step>
+        <step order="2">
+          <description>Step two...</description>
+        </step>
+      </steps>
+      
+      <logic_parts>
+           <logic_part order="1">
+             <part_name>Calibration board</part_name>
+             <description/>
+             <quantity/>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="2">
+             <part_name>PIN+TIA</part_name>
+             <description/>
+             <quantity/>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="3">
+             <part_name>Amplifier</part_name>
+             <description/>
+             <quantity/>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="4">
+             <part_name>Battery</part_name>
+             <description/>
+             <quantity/>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="5">
+             <part_name>USB</part_name>
+             <description/>
+             <quantity/>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+         </logic_parts>
+    </sub_module_steps>
+  </module_steps>
+  
+  <module_steps order="5">
+    <module> MECHANICAL</module>
+    <description>Here we explain how to assamble the MECHANICAL module from its sub-modules</description>
+    <steps>
+      <step order="1">
+        <description>Step one...</description>
+      </step>
+      <step order="2">
+        <description>Step two...</description>
+      </step>
+    </steps>
+    
+    <sub_module_steps order="1">
+      <sub_module> OUTDOOR ENCLOSURE</sub_module>
+      <description>Instructions on the installation procedure for KORUZA of its outdor enclosure</description>
+      <steps>
+        <step order="1">
+          <description>We assamble the square profile to the U-profile (by the slope to the lid at the back part) by the means of screws M4. We pull the screw from inside (the head is inside) and we put the nut M4 from outside. The same on the other side.</description>
+          <image>img/img5_1_1.png</image>
+          <step_parts>
+            <step_part order="1">
+              <part>1</part>
+              <quantity>1</quantity>
+            </step_part>
+            <step_part order="2">
+              <part>3</part>
+              <quantity>1</quantity>
+            </step_part>
+            <step_part order="3">
+              <part>4</part>
+              <quantity>5</quantity>
+            </step_part>
+            <step_part order="4">
+              <part>8</part>
+              <quantity>5</quantity>
+            </step_part>
+            <step_part order="5">
+              <part>11</part>
+              <quantity>5</quantity>
+            </step_part>
+          </step_parts>
+        </step>
+        <step order="2">
+          <description>We assamble the ringbolt to the L-profile. We put the low nut M12 to the ringbolt, then we insert it into the hole, which is on the surface where there are two oval openings in the middle of the profile. Further, we screw another low nut M12 from the lower side.</description>
+          <image>img/img5_1_2.png</image>
+          <step_parts>
+            <step_part order="1">
+              <part>5</part>
+              <quantity>1</quantity>
+            </step_part>
+            <step_part order="2">
+              <part>10</part>
+              <quantity>2</quantity>
+            </step_part>
+          </step_parts>
+        </step>
+        <step order="3">
+          <description><![CDATA[Another step is assambling of the antene holder. <br />
+a. We put the screws through the holder in the outter direction and then we put it to the side of the L-profile.
+b. We take the screws from the package of the antene holder and we use three pieces for the assambling of the L-profile.
+c. We procede as the following: We put the pad from the package on the screw 1; we pull it through the antene holder and we pull it through the middle opening on the side of the L-profile.; we put on it the pad M10 and we put the nut from the package on it.
+d. In this way, we put to it screws 2 and 3. This assambling (see the picture) makes the tilting down possible. If we want to have the tilting up, we put the screw 3 into the middle and the screw 2 into the opening below the screw 3.]]></description>
+          <image>img/img5_1_3.png</image>
+          <step_parts>
+            <step_part order="1">
+              <part>6</part>
+              <quantity>1</quantity>
+            </step_part>
+            <step_part order="2">
+              <part>15</part>
+              <quantity>1</quantity>
+            </step_part>
+            <step_part order="3">
+              <part>16</part>
+              <quantity>5</quantity>
+            </step_part>
+            <step_part order="4">
+              <part>17</part>
+              <quantity>5</quantity>
+            </step_part>
+          </step_parts>
+        </step>
+        <step order="4">
+          <description>We take the screw M12x75 and pull it through the inside of the square profile into the opening. We put the lockwasher from down and we put on it two low nuts M12. We screw one up in the way, so that the lockwasher is tightened up. The other nut is for securing the position in the oval opening of the L-profile.</description>
+          <image>img/img5_1_4.png</image>
+          <step_parts>
+            <step_part order="1">
+              <part>7</part>
+              <quantity>1</quantity>
+            </step_part>
+            <step_part order="2">
+              <part>12</part>
+              <quantity>1</quantity>
+            </step_part>
+            <step_part order="3">
+              <part>10</part>
+              <quantity>5</quantity>
+            </step_part>
+          </step_parts>
+        </step>
+        <step order="5">
+          <description>Then we take the screw M12x160 and we pull it throug the opening direction the ringbolt and we screw up three nuts, one by one, in the middle of the screw. Then we take the square profile and we put it by merans of the screw M12x75 into the oval opening which is further away from the ringbolt. Then we put the U-profile on the screw M12x160.</description>
+          <image>img/img5_1_5.png</image>
+          <step_parts>
+            <step_part order="1">
+              <part>10</part>
+              <quantity>1</quantity>
+            </step_part>
+            <step_part order="2">
+              <part>12</part>
+              <quantity>1</quantity>
+            </step_part>
+            <step_part order="3">
+              <part>13</part>
+              <quantity>5</quantity>
+            </step_part>
+          </step_parts>
+        </step>
+        <step order="6">
+          <description>Now, we screw another low nut M12 on the screw M12x160 in the hole which remained between the oval openining and the ringbolt. When we screw up the nut, we pull the screw M12x160 through the ringbolt and we screw up another low nut M12. Then we pull the screw M12x160 through the oval opening in the U-profile and we push it to the side of the L-profile and we screw up two low nuts to the L-profile. Thanks to this the screw M12x160 is tightened and will not move.</description>
+          <image>img/img5_1_6.png</image>
+          <step_parts>
+            <step_part order="1">
+              <part>10</part>
+              <quantity>4</quantity>
+            </step_part>
+            <step_part order="2">
+              <part>13</part>
+              <quantity>1</quantity>
+            </step_part>
+          </step_parts>
+        </step>
+        <step order="7">
+          <description>Now, we screw up two low nuts to the ringbolt. We put to the screw M12x160 another low nut M12. Two loosen nuts secure the tightening of the KORUZA on the screw. After the positioning to the correct position, they are screwed up to the U profile.</description>
+          <image>img/img5_1_7.png</image>
+          <step_parts>
+            <step_part order="1">
+              <part>10</part>
+              <quantity>1</quantity>
+            </step_part>
+            <step_part order="2">
+              <part>13</part>
+              <quantity>1</quantity>
+            </step_part>
+          </step_parts>
+        </step>
+        <step order="8">
+          <description>In the last step, we screw up on the screw M12x75 one low nut M12, which will secure the KORUZA in the correct direction down or up.</description>
+          <image>img/img5_1_8.png</image>
+          <step_parts>
+            <step_part order="1">
+              <part>10</part>
+              <quantity>1</quantity>
+            </step_part>
+            <step_part order="2">
+              <part>12</part>
+              <quantity>1</quantity>
+            </step_part>
+          </step_parts>
+        </step>
+      </steps>
+      
+      <logic_parts>
+           <logic_part order="1">
+             <part_name>Square tube</part_name>
+             <description/>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="2">
+             <part_name>Bracket</part_name>
+             <description/>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="3">
+             <part_name>Lid</part_name>
+             <description/>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+           
+           <logic_part order="4">
+             <part_name>U-profile</part_name>
+             <description/>
+             <quantity>1</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+           
+           <logic_part order="5">
+             <part_name>L-profile</part_name>
+             <description/>
+             <quantity>1</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+           
+           <logic_part order="6">
+             <part_name>Antene holder</part_name>
+             <description/>
+             <quantity>1</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+           
+           <logic_part order="7">
+             <part_name>Lockwasher </part_name>
+             <description/>
+             <quantity>1</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+           
+           <logic_part order="8">
+             <part_name>Square nut M4</part_name>
+             <description/>
+             <quantity>10</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+           
+            <logic_part order="9">
+             <part_name>Low nut M4</part_name>
+             <description/>
+             <quantity>1</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+           
+           <logic_part order="10">
+             <part_name>Low nut M12</part_name>
+             <description/>
+             <quantity>1</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+           
+            <logic_part order="11">
+             <part_name>Screw HEX M4</part_name>
+             <description/>
+             <quantity>10</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+           
+            <logic_part order="12">
+             <part_name>screw M12x75</part_name>
+             <description/>
+             <quantity>1</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+           
+            <logic_part order="13">
+             <part_name> M12x160</part_name>
+             <description/>
+             <quantity>1</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+            <logic_part order="14">
+             <part_name>Pad M10</part_name>
+             <description/>
+             <quantity>1</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+           
+           <logic_part order="15">
+             <part_name>Srcew from the package</part_name>
+             <description/>
+             <quantity>1</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+           <logic_part order="16">
+             <part_name>Nut from the package</part_name>
+             <description/>
+             <quantity>1</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+           <logic_part order="17">
+             <part_name>Pad from the package</part_name>
+             <description/>
+             <quantity>1</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+           
+
+           
+
+         </logic_parts>
+    </sub_module_steps>
+    
+    <sub_module_steps order="2">
+      <sub_module> SYSTEM ASSEMBLY</sub_module>
+      <description>Here we explain how to assamble the sub-module of the optical-data module.</description>
+      <steps>
+        <step order="1">
+          <description>Step one...</description>
+        </step>
+        <step order="2">
+          <description>Step two...</description>
+        </step>
+      </steps>
+      
+      <logic_parts>
+           <logic_part order="1">
+             <part_name>Rubber mount</part_name>
+             <description>10x10cm rubber 3mm non-reinforced</description>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="2">
+             <part_name>Main section lid</part_name>
+             <description>3D printed</description>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="3">
+             <part_name>Mounting ring outer</part_name>
+             <description>3D printed</description>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="4">
+             <part_name>Main section</part_name>
+             <description>3D printed</description>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="5">
+             <part_name>Main section arm</part_name>
+             <description>3D printed</description>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="6">
+             <part_name>Mounting ring inner</part_name>
+             <description>3D printed</description>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="7">
+             <part_name>SFP module slider</part_name>
+             <description>3D printed</description>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="8">
+             <part_name>Main section laser pointer spring cover</part_name>
+             <description>3D printed</description>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="9">
+             <part_name>Coupler M4 stepper</part_name>
+             <description>3D printed</description>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="10">
+             <part_name>Coupler micrometer stepper</part_name>
+             <description>3D printed</description>
+             <quantity>4</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="11">
+             <part_name>Square nut M4 DIN562</part_name>
+             <description/>
+             <quantity>16</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="12">
+             <part_name>Square nut M3 DIN562</part_name>
+             <description/>
+             <quantity>20</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="13">
+             <part_name>Screw HEX M3 25mm DIN912</part_name>
+             <description/>
+             <quantity>16</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="14">
+             <part_name>Screw HEX M3 30mm DIN912</part_name>
+             <description/>
+             <quantity>8</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="15">
+             <part_name>Screw HEX M3 45mm DIN912</part_name>
+             <description/>
+             <quantity>4</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="16">
+             <part_name>Screw TORX M3 10mm BN6404</part_name>
+             <description/>
+             <quantity>4</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="17">
+             <part_name>Screw HEX M4 45mm DIN912</part_name>
+             <description/>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="18">
+             <part_name>Screw HEX M4 65mm DIN912</part_name>
+             <description/>
+             <quantity>4</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="19">
+             <part_name>Screw HEX M4 12mm DIN912</part_name>
+             <description/>
+             <quantity>4</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="20">
+             <part_name>Screw HEX M4 16mm DIN912</part_name>
+             <description/>
+             <quantity>4</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="21">
+             <part_name>Washer M3 DIN125</part_name>
+             <description/>
+             <quantity>5</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="22">
+             <part_name>Washer M4 DIN125</part_name>
+             <description/>
+             <quantity>8</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="23">
+             <part_name>Teflon tube 4/2 mm</part_name>
+             <description/>
+             <quantity>500</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="24">
+             <part_name>Spring 10mm 20mm 0.7mm wire</part_name>
+             <description>Custom spring to attach to motor.</description>
+             <quantity>4</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+         </logic_parts>
+    </sub_module_steps>
+    
+    <sub_module_steps order="3">
+      <sub_module> PRECISE ALIGNMENT</sub_module>
+      <description>Here we explain how to assamble the sub-module of the optical-data module.</description>
+      <steps>
+        <step order="1">
+          <description>Step one...</description>
+        </step>
+        <step order="2">
+          <description>Step two...</description>
+        </step>
+      </steps>
+      
+       <logic_parts>
+           <logic_part order="1">
+             <part_name>Screw M6 x 15  0.25mm pitch</part_name>
+             <description/>
+             <quantity>4</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="2">
+             <part_name>Nut M6 0.25mm pitch</part_name>
+             <description/>
+             <quantity>4</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="3">
+             <part_name>Motor 24BYJ48</part_name>
+             <description/>
+             <quantity>6</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="4">
+             <part_name>Nut M4</part_name>
+             <description/>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+
+           <logic_part order="5">
+             <part_name>Screw HEX M4 22mm DIN933</part_name>
+             <description/>
+             <quantity>2</quantity>
+             <options>
+               <option> <part_name/> </option>
+             </options>
+           </logic_part>
+         </logic_parts>
+    </sub_module_steps>
+  </module_steps>
+  
+  <module_steps order="6">
+    <module> CONTROL ALGORITHM</module>
+    <description>Here we explain how to assamble the CONTROL ALGORITHM module from its sub-modules</description>
+    <steps>
+      <step order="1">
+        <description>Step one...</description>
+      </step>
+      <step order="2">
+        <description>Step two...</description>
+      </step>
+    </steps>
+    
+    <sub_module_steps order="1">
+      <sub_module> SENSORS</sub_module>
+      <description>Here we explain how to assamble the sub-module of the optical-data module.</description>
+      <steps>
+        <step order="1">
+          <description>Step one...</description>
+        </step>
+        <step order="2">
+          <description>Step two...</description>
+        </step>
+      </steps>
+    </sub_module_steps>
+    
+    <sub_module_steps order="2">
+      <sub_module> AUTO-TRACKING</sub_module>
+      <description>Here we explain how to assamble the sub-module of the optical-data module.</description>
+      <steps>
+        <step order="1">
+          <description>Step one...</description>
+        </step>
+        <step order="2">
+          <description>Step two...</description>
+        </step>
+      </steps>
+    </sub_module_steps>
+  </module_steps>
+  
+  <module_steps order="7">
+    <module> REMOTE MONITORING</module>
+    <description>Here we explain how to assamble the REMOTE MONITORING module from its sub-modules</description>
+    <steps>
+      <step order="1">
+        <description>Step one...</description>
+      </step>
+      <step order="2">
+        <description>Step two...</description>
+      </step>
+    </steps>
+    
+    <sub_module_steps order="1">
+      <sub_module> REAL-TIME DATA</sub_module>
+      <description>Here we explain how to assamble the sub-module of the optical-data module.</description>
+      <steps>
+        <step order="1">
+          <description>Step one...</description>
+        </step>
+        <step order="2">
+          <description>Step two...</description>
+        </step>
+      </steps>
+    </sub_module_steps>
+    
+    <sub_module_steps order="2">
+      <sub_module> PERFORMANCE FEEDBACK</sub_module>
+      <description>Here we explain how to assamble the sub-module of the optical-data module.</description>
+      <steps>
+        <step order="1">
+          <description>Step one...</description>
+        </step>
+        <step order="2">
+          <description>Step two...</description>
+        </step>
+      </steps>
+    </sub_module_steps>
+    
+    <sub_module_steps order="3">
+      <sub_module> OPEN DATA-SET</sub_module>
+      <description>Here we explain how to assamble the sub-module of the optical-data module.</description>
+      <steps>
+        <step order="1">
+          <description>Step one...</description>
+        </step>
+        <step order="2">
+          <description>Step two...</description>
+        </step>
+      </steps>
+    </sub_module_steps>
+  </module_steps>
+  
+</system_steps>
+
+
+
+
+
+</instructions>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
