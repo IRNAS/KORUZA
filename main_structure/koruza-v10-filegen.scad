@@ -38,13 +38,13 @@ use <koruza-v10.scad>
 //projection(cut = true) part_rubber();
 
 // printing combinations
-/*
+
 rotate(a=[-2,-2,0]) part_mounting_ring_inner();
 translate([0,0,-3.5])  part_laser_mount();
-*/
 
+/*
  rotate(a=[0,180,0]) rotate(a=[-2,-2,0])part_mounting_ring_outer();
  rotate(a=[0,180,0]) translate([0,0,0])  part_lens_mount_outer();
-
+*/
 
 
