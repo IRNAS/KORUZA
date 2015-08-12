@@ -7,16 +7,16 @@ use <koruza-v10.scad>
 // rotate(a=[0,180,0]) rotate(a=[-2,2,0]) part_mounting_ring_outer();
 // rotate(a=[0,180,0]) translate([0,0,0])  part_lens_mount_outer();
 
-mode=5;
+mode=0;
 
 if (mode == 0) {
     //openscad -Dmode=0 -o koruza-v10-comb-ring_outer-lens_outer.stl koruza-v10-filegen.scad
-    rotate(a=[0,180,0]) rotate(a=[-2,2,0]) part_mounting_ring_outer();
-    rotate(a=[0,180,0]) translate([0,0,0])  part_lens_mount_outer();
+    rotate(a=[0,0,0]) rotate(a=[2,-2,0]) part_mounting_ring_outer();
+    rotate(a=[0,0,0]) translate([0,0,-2])  part_lens_mount_outer();
 } else if (mode == 1) {
      //openscad -Dmode=1 -o koruza-v10-comb-ring_inner-lens_mount.stl koruza-v10-filegen.scad
-    rotate(a=[-2,2,0]) part_mounting_ring_inner();
-    translate([0,0,-3.5])  part_lens_mount();
+    rotate(a=[2,-2,0]) part_mounting_ring_inner();
+    translate([0,0,0])  part_lens_mount();
 } else if (mode == 2) {
      //openscad -Dmode=2 -o koruza-v10-laser_mount.stl koruza-v10-filegen.scad
      translate([0,0,-3.5])  part_laser_mount();
@@ -30,7 +30,7 @@ if (mode == 0) {
      //openscad -Dmode=5 -o koruza-v10-sfp_spring_mount.stl koruza-v10-filegen.scad
      part_sfp_spring_mount();
 } else if (mode == 6) {
-     //openscad -Dmode=6 -o koruza-v10-sfp_motor_mount.stl koruza-v10-filegen.scad
+     //openscad -Dmode=6 -o koruza-v10-motor_mount.stl koruza-v10-filegen.scad
      part_motor_mount();    
 } else if (mode == 7) {
      //openscad -Dmode=7 -o koruza-v10-mc_mount.stl koruza-v10-filegen.scad
