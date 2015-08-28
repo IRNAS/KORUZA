@@ -332,16 +332,17 @@ module ring(thickness){
 
 
 module ring_screws(){
-    translate([0,0,3]){
-    translate([-(48-3),17,-15]) rotate([0,180,0]) screw_din912_nut_din562(l=35,d=3,nut_depth=6,screw_path=50,nut_path=30,fit=1.1,res=20);
-    translate([-(48-3),-17,-15]) rotate([0,180,0]) screw_din912_nut_din562(l=35,d=3,nut_depth=6,screw_path=50,nut_path=30,fit=1.1,res=20);
-    translate([(48-3),17,-15]) rotate([0,180,180]) screw_din912_nut_din562(l=35,d=3,nut_depth=6,screw_path=50,nut_path=30,fit=1.1,res=20);
-    translate([(48-3),-17,-15]) rotate([0,180,180]) screw_din912_nut_din562(l=35,d=3,nut_depth=6,screw_path=50,nut_path=30,fit=1.1,res=20);
+    translate([0,0,0]){
+    translate([-(48-3),17,-15]) rotate([0,180,0]) screw_din912_nut_din562(l=35,d=3,nut_depth=3,screw_path=50,nut_path=30,fit=1.1,res=20);
+    translate([-(48-3),-17,-15]) rotate([0,180,0]) screw_din912_nut_din562(l=35,d=3,nut_depth=3,screw_path=50,nut_path=30,fit=1.1,res=20);
+    translate([(48-3),17,-15]) rotate([0,180,180]) screw_din912_nut_din562(l=35,d=3,nut_depth=3,screw_path=50,nut_path=30,fit=1.1,res=20);
+    translate([(48-3),-17,-15]) rotate([0,180,180]) screw_din912_nut_din562(l=35,d=3,nut_depth=3,screw_path=50,nut_path=30,fit=1.1,res=20);
     rotate([0,0,90]){
-        translate([-(48-3),13,-15]) rotate([0,180,0]) screw_din912_nut_din562(l=35,d=3,nut_depth=6,screw_path=50,nut_path=30,fit=1.1,res=20);
-        translate([-(48-3),-10,-15]) rotate([0,180,0]) screw_din912_nut_din562(l=35,d=3,nut_depth=6,screw_path=50,nut_path=30,fit=1.1,res=20);
-        translate([(48-3),17,-15]) rotate([0,180,180]) screw_din912_nut_din562(l=35,d=3,nut_depth=6,screw_path=50,nut_path=30,fit=1.1,res=20);
-        translate([(48-3),-17,-15]) rotate([0,180,180]) screw_din912_nut_din562(l=35,d=3,nut_depth=6,screw_path=50,nut_path=30,fit=1.1,res=20);
+        translate([-(48-3),17,-15]) rotate([0,180,0]) screw_din912_nut_din562(l=35,d=3,nut_depth=3,screw_path=50,nut_path=30,fit=1.1,res=20);
+        translate([-(48-3),-17,-15]) rotate([0,180,0]) screw_din912_nut_din562(l=35,d=3,nut_depth=3,screw_path=50,nut_path=30,fit=1.1,res=20);
+        translate([(48-3),17,-15]) rotate([0,180,180]) screw_din912_nut_din562(l=35,d=3,nut_depth=3,screw_path=50,nut_path=30,fit=1.1,res=20);
+        translate([(48-3),-17,-15]) rotate([0,180,180]) screw_din912_nut_din562(l=35,d=3,nut_depth=3,screw_path=50,nut_path=30,fit=1.1,res=20);
+         translate([(48-3),-7,-15]) rotate([0,180,180]) screw_din912_nut_din562(l=35,d=3,nut_depth=3,screw_path=50,nut_path=30,fit=1.1,res=20);
     }
 }
 }
@@ -358,10 +359,10 @@ module holding_screws(){
 }
 
 //holding_screws();
-in_ring_screw_l=33;
+in_ring_screw_l=37;
 
 module inner_ring_screws(){
-    translate([0,0,4]){
+    translate([0,0,1]){
     translate([-(35-3),17,-14]) rotate([0,180,0]) screw_din912_nut_din562(l=in_ring_screw_l,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
     translate([-(35-3),-17,-14]) rotate([0,180,0]) screw_din912_nut_din562(l=in_ring_screw_l,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
     
@@ -370,16 +371,19 @@ module inner_ring_screws(){
         translate([-(35-3),-17,-14]) rotate([0,180,0]) screw_din912_nut_din562(l=in_ring_screw_l,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
     }
     rotate([0,0,90]){
-        translate([-(35-3),13,-14]) rotate([0,180,0]) screw_din912_nut_din562(l=in_ring_screw_l,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
-        translate([-(35-3),-10,-14]) rotate([0,180,0]) screw_din912_nut_din562(l=in_ring_screw_l,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
+        translate([-(35-3),17,-14]) rotate([0,180,0]) screw_din912_nut_din562(l=in_ring_screw_l,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
+        translate([-(35-3),-17,-14]) rotate([0,180,0]) screw_din912_nut_din562(l=in_ring_screw_l,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
     }
     rotate([0,0,-90]){
         translate([-(35-3),17,-14]) rotate([0,180,0]) screw_din912_nut_din562(l=in_ring_screw_l,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
         translate([-(35-3),-17,-14]) rotate([0,180,0]) screw_din912_nut_din562(l=in_ring_screw_l,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
     }
+    rotate([0,0,-90]){
+        translate([-(35-3),7,-14]) rotate([0,180,0]) screw_din912_nut_din562(l=in_ring_screw_l,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
+    }
     }
 }
-//inner_ring_screws();
+inner_ring_screws();
 
 module sfp_screws(){
     translate([offset,0,0])
@@ -418,13 +422,13 @@ part_mounting_ring_inner();
 // mounting ring outside
 module part_mounting_ring_outer(){
     difference(){
-        translate([0,0,-10-rubber_t])  rotate(a=[-2,2,0])  ring(10);
+        translate([0,0,-10-rubber_t])  rotate(a=[-2,2,0])  ring(13);
          rotate(a=[-2,2,0]) ring_screws();
         enclosure_tilt();
     }
 }
 
-part_mounting_ring_outer();
+//part_mounting_ring_outer();
 
 
 //////////////////////////////////////////////////////////////////////////////
@@ -459,11 +463,11 @@ module part_lens_mount(){
 
 //////////////////////////////////////////////////////////////////////////////
 // lens_mount outer
-lens_mount_outer_t=8;
+lens_mount_outer_t=11;
 module part_lens_mount_outer(){
     difference(){
         translate([0,0,-8-rubber_t])hull_cube(lens_mount_d_bot,lens_mount_radius,lens_mount_outer_t);
-        translate([offset,0,-8-rubber_t])cylinder(h=8,r=lens_diameter/2,center=false,$fn=res);
+        translate([offset,0,-8-rubber_t])cylinder(h=lens_mount_outer_t,r=lens_diameter/2,center=false,$fn=res);
         rods(rod_diameter,rod_diameter_tolerance);
         inner_ring_screws();
         translate([laser_offset,0,lens_thickness+lens_mounting_ring_t]) aiming_laser();
@@ -498,6 +502,8 @@ module part_laser_mount(){
         mirror([0,1,0]) translate([0,0,laser_height-4-5]) aiming_laser_cube_screws();
         //hole for the spring
         translate([-44,0,34-5]) rotate(a=[0,90,0])cylinder(h=12,r=3.3,center=false,$fn=res);
+        //square hole for nut
+        translate([-44+6,0,34-5])cube([12,6,6],center=true);
         //hole for the fix screw
         translate([-54,0,34-5]) rotate(a=[0,90,0])cylinder(h=20,r=1.5,center=false,$fn=res);
         //cutout for the laser to come in

@@ -7,7 +7,7 @@ use <koruza-v10.scad>
 // rotate(a=[0,180,0]) rotate(a=[-2,2,0]) part_mounting_ring_outer();
 // rotate(a=[0,180,0]) translate([0,0,0])  part_lens_mount_outer();
 
-mode=0;
+//mode=10;
 
 if (mode == 0) {
     //openscad -Dmode=0 -o koruza-v10-comb-ring_outer-lens_outer.stl koruza-v10-filegen.scad
@@ -85,7 +85,7 @@ if (mode == 0) {
 
 ////////// part rubber
 
-// projection(cut = true) part_rubber();
+//projection(cut = true) part_rubber();
 
 ////////// parts for various mounting
 
