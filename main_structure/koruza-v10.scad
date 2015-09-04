@@ -526,8 +526,10 @@ module part_sfp_mount(){
             translate([offset-20,-20,lens_bfl+lens_thickness+lens_mounting_ring_t-15])cube([10,40,50]);
             translate([offset-20+3,8,lens_bfl+lens_thickness+lens_mounting_ring_t])cube([10,12,50]);
         }
+    //sfp tab access hole
     translate([10,0,lens_bfl+lens_thickness+lens_mounting_ring_t-15]) rotate(a=[0,-90,0]) cylinder(h=50,r=8,center=false,$fn=res);
-    translate([10,7.5+4.3,lens_bfl+lens_thickness+lens_mounting_ring_t+21-5]) rotate(a=[0,-90,0]) cylinder(h=50,r=1.5,center=false,$fn=res);
+    //sfp board fix screw
+    translate([-11+3,7.5+4.3,lens_bfl+lens_thickness+lens_mounting_ring_t+21-5]) rotate(a=[0,-90,]) screw_din912_nut_din562(l=16,d=3,nut_depth=1,screw_path=50,nut_path=30,fit=1.2,res=20);
  
     }
     //translate([offset-20.1,8,lens_bfl+lens_thickness+lens_mounting_ring_t-15])cube([10.1,12,35]);
