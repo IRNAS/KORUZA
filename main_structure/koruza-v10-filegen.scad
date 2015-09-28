@@ -7,7 +7,7 @@ use <koruza-v10.scad>
 // rotate(a=[0,180,0]) rotate(a=[-2,2,0]) part_mounting_ring_outer();
 // rotate(a=[0,180,0]) translate([0,0,0])  part_lens_mount_outer();
 
-//mode=10;
+mode=8;
 
 if (mode == 0) {
     //openscad -Dmode=0 -o koruza-v10-comb-ring_outer-lens_outer.stl koruza-v10-filegen.scad
@@ -44,8 +44,10 @@ if (mode == 0) {
     rotate(a=[90,0,0]) part_mc_plate();
     translate([0,13*3,0])
     rotate(a=[90,0,0]) part_mc_plate();     
+} else if (mode == 9) {
+     //openscad -Dmode=9 -o koruza-v10-sfp_mount_vracket.stl koruza-v10-filegen.scad
+    sfp_mount_bracket(); 
 }
-
 
 
 

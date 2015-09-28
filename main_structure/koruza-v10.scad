@@ -82,7 +82,7 @@ rod_plate_diameter = 18;
 module rods_plate(diameter,tolerance){
     difference(){
         hull(){
-            for (i = [[-rod_offset_x_t,-rod_offset_y_t,0],[rod_offset_x_b+7,-rod_offset_y_b-2,0],[-rod_offset_x_t,rod_offset_y_t,0],[rod_offset_x_b+7,rod_offset_y_b-2,0]]){
+            for (i = [[-rod_offset_x_t-7,-rod_offset_y_t-3,0],[rod_offset_x_b+14,-rod_offset_y_b-2,0],[-rod_offset_x_t-7,rod_offset_y_t+10,0],[rod_offset_x_b+14,rod_offset_y_b-2,0]]){
                 translate([offset,0,rod_offset_z]) translate(i) cylinder(h=14,r=(diameter+4+tolerance)/2,center=false,$fn=res);
             }
         }
@@ -137,7 +137,7 @@ module rods_plate_single_top(diameter,tolerance){
     difference(){
          hull(){
              //top plate
-            for (i = [[-rod_offset_x_t+6,-rod_offset_y_t-3,0],[-rod_offset_x_t+6,rod_offset_y_t+3,0],[-rod_offset_x_t-36,-rod_offset_y_t+10,0],[-rod_offset_x_t-36,rod_offset_y_t-10,0],[-rod_offset_x_t-15,-rod_offset_y_t-3,0],[-rod_offset_x_t-15,rod_offset_y_t+3,0]]){
+            for (i = [[-rod_offset_x_t+6,-rod_offset_y_t-2.75,0],[-rod_offset_x_t+6,rod_offset_y_t+2.75,0],[-rod_offset_x_t-36,-rod_offset_y_t+5,0],[-rod_offset_x_t-36,rod_offset_y_t-5,0],[-rod_offset_x_t-15,-rod_offset_y_t-2.75,0],[-rod_offset_x_t-15,rod_offset_y_t+2.75,0]]){
                 translate([offset,0,rod_offset_z]) translate(i) cylinder(h=9,r=(diameter+4+tolerance)/2,center=false,$fn=res);
             }
             //bottom plate
@@ -275,9 +275,9 @@ module sfp_module(){
 // focus adjustment stepper motor
 
 module f_stepper(){
-		translate([38,0,-1]) // here is defined the position of the t stepper
+		translate([38,0,-3]) // here is defined the position of the t stepper
 		rotate(a=[0,180,90])
-		stepper_mounted2(n_l=30,n_d=5,,n_rot1=0,n_rot2=0,screw=2, res=res);
+		stepper_mounted2(n_l=30,n_d=7,n_rot1=0,n_rot2=0,screw=2,n_w=7,n_z=2.5,screw_w=3, res=res);
 }
 
 //translate([0,0,100]) f_stepper();
@@ -349,6 +349,19 @@ module ring_screws(){
 //ring_screws();
 //ring();
 
+module laser_wedge_cover_screws(){
+    space_x=15;
+    space_y=25;
+    translate([-25,0,53-lens_thickness-lens_mounting_ring_t]){
+    translate([-space_x,space_y,-15]) rotate([0,0,90]) screw_din912_nut_din562(l=16,d=3,nut_depth=9,screw_path=50,nut_path=30,fit=1.1,res=20);
+    translate([-space_x,-space_y,-15]) rotate([0,0,-90]) screw_din912_nut_din562(l=16,d=3,nut_depth=9,screw_path=50,nut_path=30,fit=1.1,res=20);
+    translate([space_x,space_y,-15]) rotate([0,0,-65]) screw_din912_nut_din562(l=16,d=3,nut_depth=9,screw_path=50,nut_path=30,fit=1.1,res=20);
+    translate([space_x,-space_y,-15]) rotate([0,0,65]) screw_din912_nut_din562(l=16,d=3,nut_depth=9,screw_path=50,nut_path=30,fit=1.1,res=20);
+    }
+}
+
+//laser_wedge_cover_screws();
+
 module holding_screws(){
 	translate([-50,43,10]) rotate([0,-90,0]) screw_din912_nut_din562(l=14,d=4,nut_depth=4,screw_path=20,nut_path=20,fit=1.1,res=20);
     translate([-50,-43,10]) rotate([0,-90,]) screw_din912_nut_din562(l=14,d=4,nut_depth=4,screw_path=20,nut_path=20,fit=1.1,res=20);
@@ -363,23 +376,23 @@ in_ring_screw_l=37;
 
 module inner_ring_screws(){
     translate([0,0,1]){
-    translate([-(35-3),17,-14]) rotate([0,180,0]) screw_din912_nut_din562(l=in_ring_screw_l,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
-    translate([-(35-3),-17,-14]) rotate([0,180,0]) screw_din912_nut_din562(l=in_ring_screw_l,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
+    translate([-(35-3),17,-14]) rotate([0,180,0]) screw_din912_nut_din562_out(l=in_ring_screw_l,n_t=4,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
+    translate([-(35-3),-17,-14]) rotate([0,180,0]) screw_din912_nut_din562_out(l=in_ring_screw_l,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
     
     rotate([0,0,180]){
-        translate([-(35-3),17,-14]) rotate([0,180,0]) screw_din912_nut_din562(l=in_ring_screw_l,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
-        translate([-(35-3),-17,-14]) rotate([0,180,0]) screw_din912_nut_din562(l=in_ring_screw_l,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
+        translate([-(35-3),17,-14]) rotate([0,180,0]) screw_din912_nut_din562_out(l=in_ring_screw_l,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
+        translate([-(35-3),-17,-14]) rotate([0,180,0]) screw_din912_nut_din562_out(l=in_ring_screw_l,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
     }
     rotate([0,0,90]){
-        translate([-(35-3),17,-14]) rotate([0,180,0]) screw_din912_nut_din562(l=in_ring_screw_l,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
-        translate([-(35-3),-17,-14]) rotate([0,180,0]) screw_din912_nut_din562(l=in_ring_screw_l,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
+        translate([-(35-3),17,-14]) rotate([0,180,0]) screw_din912_nut_din562_out(l=in_ring_screw_l,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
+        translate([-(35-3),-17,-14]) rotate([0,180,0]) screw_din912_nut_din562_out(l=in_ring_screw_l,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
     }
     rotate([0,0,-90]){
-        translate([-(35-3),17,-14]) rotate([0,180,0]) screw_din912_nut_din562(l=in_ring_screw_l,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
-        translate([-(35-3),-17,-14]) rotate([0,180,0]) screw_din912_nut_din562(l=in_ring_screw_l,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
+        translate([-(35-3),17,-14]) rotate([0,180,0]) screw_din912_nut_din562_out(l=in_ring_screw_l,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
+        translate([-(35-3),-17,-14]) rotate([0,180,0]) screw_din912_nut_din562_out(l=in_ring_screw_l,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
     }
     rotate([0,0,-90]){
-        translate([-(35-3),7,-14]) rotate([0,180,0]) screw_din912_nut_din562(l=in_ring_screw_l,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
+        translate([-(35-3),7,-14]) rotate([0,180,0]) screw_din912_nut_din562_out(l=in_ring_screw_l,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
     }
     }
 }
@@ -390,7 +403,7 @@ module sfp_screws(){
     for(x=[1.8,178.2,36.4,143.6,68.1,111.9,-24,204]){
         rotate(a=[0,0,x-90])
         translate([16,0,0])//fixed dimension
-        screw_din912(l=22,d=3,fit=1.1,res=20);
+        screw_din912(l=25,d=3,fit=1.1,res=20);
     }
 }
 //sfp_screws();
@@ -406,6 +419,30 @@ module sfp_screws(){
 
 // ACTUAL PARTS
 //////////////////////////////////////////////////////////////////////////////
+
+module sfp_mount_bracket(){
+    thickness=10;
+    difference(){
+        translate([offset,0,0])cylinder(h=thickness,r=19,center=false,$fn=res);
+        translate([-10-11,-25,0]) cube([20,50,thickness]); // to cut of the cylinder on one edge
+        cutout_x=11.45;
+        cutout_y=14.15;
+        translate([offset+0.6,-0.5,0]) {
+            translate([0,0,thickness/2]) cube([cutout_x,cutout_y,thickness],center=true);
+            translate([(cutout_x-1)/2,(cutout_y-1)/2,0])cylinder(h=18.1,r=1.7,center=false,$fn=res);
+            translate([-(cutout_x-1)/2,(cutout_y-1)/2,0])cylinder(h=18.1,r=1.7,center=false,$fn=res);
+            translate([(cutout_x-1)/2,-(cutout_y-1)/2,0])cylinder(h=18.1,r=1.7,center=false,$fn=res);
+            translate([-(cutout_x-1)/2,-(cutout_y-1)/2,0])cylinder(h=18.1,r=1.7,center=false,$fn=res);
+        }
+        translate([0,0,thickness-3]) sfp_screws();
+        translate([24,0,thickness/2]) rotate(a=[180,-90,0]) screw_din912_nut_din562(l=12,d=3,nut_depth=6,screw_path=50,nut_path=30,fit=1.1,res=20); // set screw
+    }
+
+}
+
+
+translate([0,0,80]) sfp_mount_bracket();
+
 // mounting ring inside
 module part_mounting_ring_inner(){
     difference(){
@@ -483,9 +520,10 @@ module part_laser_mount(){
     translate([0,0,lens_thickness+lens_mounting_ring_t])
     difference(){
         union(){
-            translate([0,0,0]) hull_cube(lens_mount_d_top,lens_mount_radius,15);
+            translate([0,0,0]) hull_cube(lens_mount_d_top,lens_mount_radius,26.5);
             translate([0,0,20+17-2]) rods_plate_single_top(8,rod_diameter_tolerance);
         }
+        laser_wedge_cover_screws();
         translate([offset,0,0]) beam_path();
         translate([laser_offset,0,-(5+lens_thickness+lens_mounting_ring_t)]) aiming_laser();
         translate([laser_offset,0,-(5+lens_thickness+lens_mounting_ring_t)]) aiming_laser_space();
@@ -520,16 +558,16 @@ module part_sfp_mount(){
         translate([0,0,lens_bfl+lens_thickness+lens_mounting_ring_t-19]) rods_plate_sfp(10,rod_diameter_tolerance);
         translate([0,0,lens_bfl+lens_thickness+lens_mounting_ring_t-10]) sfp_screws();
         translate([0,0,97]) f_stepper();
-        translate([offset,0,lens_bfl+lens_thickness+lens_mounting_ring_t-50])cylinder(h=100,r=10,center=false,$fn=res);
+        translate([offset,0,lens_bfl+lens_thickness+lens_mounting_ring_t-30])cylinder(h=15,r=13,center=false,$fn=res);
         difference(){
             translate([offset,0,lens_bfl+lens_thickness+lens_mounting_ring_t-15])cylinder(h=50,r=20,center=false,$fn=res);
             translate([offset-20,-20,lens_bfl+lens_thickness+lens_mounting_ring_t-15])cube([10,40,50]);
-            translate([offset-20+3,8,lens_bfl+lens_thickness+lens_mounting_ring_t])cube([10,12,50]);
+            translate([offset-20+4.15,8,lens_bfl+lens_thickness+lens_mounting_ring_t])cube([10,12,50]); // recess for pcb to sit in
         }
     //sfp tab access hole
     translate([10,0,lens_bfl+lens_thickness+lens_mounting_ring_t-15]) rotate(a=[0,-90,0]) cylinder(h=50,r=8,center=false,$fn=res);
     //sfp board fix screw
-    translate([-11+3,7.5+4.3,lens_bfl+lens_thickness+lens_mounting_ring_t+21-5]) rotate(a=[0,-90,]) screw_din912_nut_din562(l=16,d=3,nut_depth=1,screw_path=50,nut_path=30,fit=1.2,res=20);
+    translate([-11+5,7.5+5.3,lens_bfl+lens_thickness+lens_mounting_ring_t+21-5]) rotate(a=[0,-90,]) screw_din912_nut_din562(l=16,d=3,nut_depth=1,screw_path=50,nut_path=30,fit=1.2,res=20);
  
     }
     //translate([offset-20.1,8,lens_bfl+lens_thickness+lens_mounting_ring_t-15])cube([10.1,12,35]);
@@ -544,25 +582,33 @@ part_sfp_mount();
 module part_motor_mount(){
     difference(){
         union(){
-            translate([-10+0.4,-4,160]) cube([56.2,50,62]);
+            translate([-10+0.4+1.2,-9,160]) cube([55,55,62]);
             translate([0,0,170]) rods_plate(rod_diameter,rod_diameter_tolerance);
             //spacers for board
-            translate([45-3.5,45-4,222])cylinder(h=3,r=4,center=false,$fn=res);
-            translate([45-15,45-15,222])cylinder(h=3,r=4,center=false,$fn=res);
-            translate([45-24,45-3.5,222])cylinder(h=3,r=4,center=false,$fn=res);
+            translate([45-4.5,45-5,222])cylinder(h=3,r=4,center=false,$fn=res);
+            translate([45-16,45-16,222])cylinder(h=3,r=4,center=false,$fn=res);
+            translate([45-25,45-5.5,222])cylinder(h=3,r=4,center=false,$fn=res);
         }
-        translate([37.6+2,-4,160]) cube([20,20,14]);
-        translate([37.6+2,-4,174]) rotate(a=[0,15,0]) cube([20,20,70]);
+        translate([37.6+7,7,160]) cube([20,8,74]); // grove for cables
+        translate([37.6+5,7,160]) rotate(a=[0,15,0])  cube([20,8,74]); // grrove for cables;
+        translate([-30,-21,160]) cube([20,10,74]); // grrove for cables
         translate([48.6,48,200]) xy_motors();
         rods(rod_diameter,rod_diameter_tolerance);
         //holes for PCB board
-        translate([45-3.5,45-4,216])cylinder(h=10,r=1.5,center=false,$fn=res);
-        translate([45-24,45-3.5,216])cylinder(h=10,r=1.5,center=false,$fn=res);
-        //set screaws
+        translate([45-4.5,45-5,216])cylinder(h=10,r=1.5,center=false,$fn=res);
+        translate([45-25,45-5.5,216])cylinder(h=10,r=1.5,center=false,$fn=res);
+        //set screws
         translate([40,-rod_offset_y_b,170-3]) rotate(a=[0,90,0])screw_din912_nut_din562(l=10,d=4,nut_depth=3,screw_path=50,nut_path=30,fit=1.2,res=20);
         translate([40,rod_offset_y_b,170-3]) rotate(a=[0,90,0])screw_din912_nut_din562(l=10,d=4,nut_depth=3,screw_path=50,nut_path=30,fit=1.2,res=20);
+        translate([-17,-rod_offset_y_t,170-3]) rotate(a=[0,90,180])screw_din912_nut_din562(l=10,d=4,nut_depth=3,screw_path=50,nut_path=30,fit=1.2,res=20);
+        translate([-17,rod_offset_y_t,170-3]) rotate(a=[0,90,180])screw_din912_nut_din562(l=10,d=4,nut_depth=3,screw_path=50,nut_path=30,fit=1.2,res=20);
+                //screw for cable clip
+        translate([-17,-3,167]) rotate(a=[0,90,180]) rotate(a=[0,0,0]) screw_din912_nut_din562(l=12,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.2,res=20);
+
     }
 }
+
+
 
 part_motor_mount();
 
@@ -591,24 +637,17 @@ part_mc_mount();
 // sfp_spring_mount
 module part_mc_plate(){
     difference(){
-
-        //translate([-1,0,-24])cube([47,3,116]);
-            union(){    
-                /*
+        union(){    
             hull(){
-            for (i = [[25,0,-6],[3,0,16]]){
-                    translate(i) rotate(a=[-90,0,0]) cylinder(h=3,r=5,center=false,$fn=res);
-                }
-            }
-            */
-             hull(){
             for (i = [[3+41,0,80],[3,0,80]]){
-                    translate(i) rotate(a=[-90,0,0]) cylinder(h=3,r=5,center=false,$fn=res);
+                    translate(i) rotate(a=[-90,0,0]) cylinder(h=2,r=5,center=false,$fn=res);
                 }
             }
+            translate([3,0,80]) rotate(a=[-90,0,0]) cylinder(h=4,r=5,center=false,$fn=res);         //spacer
+            translate([3+20,0,80]) rotate(a=[-90,0,0]) cylinder(h=4,r=5,center=false,$fn=res);
         }   
-        for (i = [[25,0,-6],[3,0,16],[3,0,80],[3+41,0,80]]){
-                translate(i) rotate(a=[-90,0,0]) cylinder(h=20,r=1.6,center=false,$fn=res);//beam path
+            for (i = [[3,0,80],[3+41,0,80]]){
+            translate(i) rotate(a=[-90,0,0]) cylinder(h=20,r=1.6,center=false,$fn=res);//beam path
             }
     }
 }

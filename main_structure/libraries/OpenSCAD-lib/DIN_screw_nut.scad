@@ -54,10 +54,10 @@ module nut_din562(d=3.5,fit=1.2){
 // DIN562 nut with added insert path
 module nut_din562_path(d=3.5,fit=1.2,path_l=30){
 	translate([0,0,((d/2+0.2)*fit)/2])
-	cube([(d*1.5+1)*fit,(d*1.5+1)*fit,(d/2+0.6)*fit], center=true);
+	cube([(d*1.5+1)*fit,(d*1.5+1)*fit,(d/2+1)*fit], center=true);
 	//path
 	translate([path_l/2,0,((d/2+0.2)*fit)/2])
-	cube([path_l,(d*1.5+1)*fit,(d/2+0.6)*fit], center=true);
+	cube([path_l,(d*1.5+1)*fit,(d/2+1)*fit], center=true);
 }
 
 // Basic combination of the screw and nut
@@ -74,5 +74,22 @@ module screw_din912_nut_din562(l=16,d=3,nut_depth=5,screw_path=100,nut_path=30,f
 	screw_din912_path(l,d,fit,screw_path,res);
 	translate([0,0,-l+nut_depth])
 	nut_din562_path(d,fit,nut_path);
+    //small path for pushing the nut out
+    /*translate([0,0,-l+nut_depth+1])
+    rotate(a=[0,90,0])
+    translate([0,0,-50])
+	cylinder(h=100,r=1,center=true,$fn=res);*/
 }
 
+// Useful combination, screw + nut with insert patchs + paths to push nuts out, so you can be sure that you can insert the screw and the nut into the 3D printed part
+// nut depth is defined as the length of the screw looking out of the nut
+module screw_din912_nut_din562_out(l=16,d=3,nut_depth=5,screw_path=100,nut_path=30,fit=1.2,res=20){
+	screw_din912_nut_din562(l,d,nut_depth,screw_path,nut_path,fit,res);
+    //small path for pushing the nut out
+    translate([0,0,-l+nut_depth+1])
+    rotate(a=[0,90,0])
+    translate([0,0,-50])
+	cylinder(h=100,r=1,center=true,$fn=res);
+}
+
+screw_din912_nut_din562_out();
