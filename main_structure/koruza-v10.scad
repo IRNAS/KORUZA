@@ -396,7 +396,7 @@ module inner_ring_screws(){
     }
     }
 }
-inner_ring_screws();
+//inner_ring_screws();
 
 module sfp_screws(){
     translate([offset,0,0])
@@ -441,7 +441,7 @@ module sfp_mount_bracket(){
 }
 
 
-translate([0,0,80]) sfp_mount_bracket();
+//translate([0,0,80]) sfp_mount_bracket();
 
 // mounting ring inside
 module part_mounting_ring_inner(){
@@ -453,7 +453,7 @@ module part_mounting_ring_inner(){
     }
 }
 
-part_mounting_ring_inner();
+//part_mounting_ring_inner();
 
 //////////////////////////////////////////////////////////////////////////////
 // mounting ring outside
@@ -463,9 +463,14 @@ module part_mounting_ring_outer(){
          rotate(a=[-2,2,0]) ring_screws();
         enclosure_tilt();
     }
+        rotate(a=[-2,2,0])difference(){
+        translate([0,0,-rubber_t/2+0.5])hull_cube(lens_mount_d_bot+16,lens_mount_radius+4,1);
+        translate([0,0,-rubber_t/2])hull_cube(lens_mount_d_bot+16-2,lens_mount_radius+4,2);
+        ring_screws();
+    }
 }
 
-//part_mounting_ring_outer();
+part_mounting_ring_outer();
 
 
 //////////////////////////////////////////////////////////////////////////////
@@ -509,6 +514,14 @@ module part_lens_mount_outer(){
         inner_ring_screws();
         translate([laser_offset,0,lens_thickness+lens_mounting_ring_t]) aiming_laser();
     }
+    difference(){
+        translate([0,0,-rubber_t/2+0.5])hull_cube(lens_mount_d_bot,lens_mount_radius,1);
+        translate([0,0,-rubber_t/2])hull_cube(lens_mount_d_bot-2,lens_mount_radius,2);
+    }
+    difference(){
+        translate([offset,0,-rubber_t/2+0.5])cylinder(h=2,r=lens_diameter/2+1,center=false,$fn=res);
+        translate([offset,0,-rubber_t/2])cylinder(h=3,r=lens_diameter/2,center=false,$fn=res);
+    }
 }
 
 part_lens_mount_outer();
@@ -549,7 +562,7 @@ module part_laser_mount(){
     }
 }
 
-part_laser_mount();
+//part_laser_mount();
 
 //////////////////////////////////////////////////////////////////////////////
 // sfp_mount
@@ -580,6 +593,8 @@ part_sfp_mount();
 //////////////////////////////////////////////////////////////////////////////
 // sfp_mount
 module part_motor_mount(){
+    //screw for cable clip
+        translate([0,0,210]) rotate(a=[0,90,180+45]) translate([0,0,5])rotate(a=[0,0,180]) screw_din912_nut_din562(l=20,d=3,nut_depth=13,screw_path=50,nut_path=30,fit=1.2,res=20);
     difference(){
         union(){
             translate([-10+0.4+1.2,-9,160]) cube([55,55,62]);
@@ -602,8 +617,10 @@ module part_motor_mount(){
         translate([40,rod_offset_y_b,170-3]) rotate(a=[0,90,0])screw_din912_nut_din562(l=10,d=4,nut_depth=3,screw_path=50,nut_path=30,fit=1.2,res=20);
         translate([-17,-rod_offset_y_t,170-3]) rotate(a=[0,90,180])screw_din912_nut_din562(l=10,d=4,nut_depth=3,screw_path=50,nut_path=30,fit=1.2,res=20);
         translate([-17,rod_offset_y_t,170-3]) rotate(a=[0,90,180])screw_din912_nut_din562(l=10,d=4,nut_depth=3,screw_path=50,nut_path=30,fit=1.2,res=20);
-                //screw for cable clip
+        //screw for cable clip
         translate([-17,-3,167]) rotate(a=[0,90,180]) rotate(a=[0,0,0]) screw_din912_nut_din562(l=12,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.2,res=20);
+        //spring saddle
+        rotate(a=[0,0,45]) translate([-14,0,215])  cube([20,20,82],center=true);
 
     }
 }
@@ -652,6 +669,26 @@ module part_mc_plate(){
     }
 }
  translate([-40,-40,40])  part_mc_plate();
+
+//////////////////////////////////////////////////////////////////////////////
+// rpi plate
+module part_rpi_plate(){
+    difference(){
+        union(){    
+            hull(){
+            for (i = [[49.5,0,0],[0,0,0]]){
+                 translate(i) rotate(a=[0,0,0]) cylinder(h=2,r=4,center=false,$fn=res);
+                }
+            }
+            translate([49.5,0,0]) rotate(a=[0,0,0]) cylinder(h=6,r=4,center=false,$fn=res);
+            translate([0,0,0]) rotate(a=[0,0,0]) cylinder(h=6,r=4,center=false,$fn=res);
+        }   
+            for (i = [[49.5,0,0],[0,0,0]]){
+            translate(i) rotate(a=[0,0,0]) cylinder(h=20,r=1.6,center=false,$fn=res);//beam path
+            }
+    }
+}
+ translate([0,0,300])  part_rpi_plate();
 
 //////////////////////////////////////////////////////////////////////////////
 // laser pointer adjustment

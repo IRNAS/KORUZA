@@ -8,3 +8,4 @@ openscad -Dmode=6 -o koruza-v10-motor_mount.stl koruza-v10-filegen.scad
 openscad -Dmode=7 -o koruza-v10-mc_mount.stl koruza-v10-filegen.scad
 openscad -Dmode=8 -o koruza-v10-mc_plate.stl koruza-v10-filegen.scad
 openscad -Dmode=9 -o koruza-v10-sfp_mount_bracket.stl koruza-v10-filegen.scad
+openscad -Dmode=10 -o koruza-v10-rpi_plate.stl koruza-v10-filegen.scad
