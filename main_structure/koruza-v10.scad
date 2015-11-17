@@ -593,8 +593,6 @@ part_sfp_mount();
 //////////////////////////////////////////////////////////////////////////////
 // sfp_mount
 module part_motor_mount(){
-    //screw for cable clip
-        translate([0,0,210]) rotate(a=[0,90,180+45]) translate([0,0,5])rotate(a=[0,0,180]) screw_din912_nut_din562(l=20,d=3,nut_depth=13,screw_path=50,nut_path=30,fit=1.2,res=20);
     difference(){
         union(){
             translate([-10+0.4+1.2,-9,160]) cube([55,55,62]);
@@ -621,6 +619,8 @@ module part_motor_mount(){
         translate([-17,-3,167]) rotate(a=[0,90,180]) rotate(a=[0,0,0]) screw_din912_nut_din562(l=12,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.2,res=20);
         //spring saddle
         rotate(a=[0,0,45]) translate([-14,0,215])  cube([20,20,82],center=true);
+         //screw for the spring mount
+        translate([0,0,210]) rotate(a=[0,90,180+45]) translate([0,0,5])rotate(a=[0,0,180]) screw_din912_nut_din562(l=20,d=3,nut_depth=13,screw_path=50,nut_path=30,fit=1.2,res=20);
 
     }
 }
