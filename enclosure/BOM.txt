@@ -1,0 +1,26 @@
+1 enota:
+
+1x square tube 100x100x2 x 475mm
+1x L profile 100x100x5 x 250mm
+1x U profile 100x35x5 x 160mm
+1x pritrditev za na štango z vsemi vijaki
+
+1x bolt_eye_DIN444A_M10x45
+2x nut_thin_ISO4035_M10
+
+1x bolt_round_head_square_neck_DIN603_M10x70
+1x washer_spring_lock_DIN127_M10
+3x nut_thin_ISO4035_M10
+
+1x bolt_HEX_ISO4017_DIN933_M10x160
+1x washer_spring_lock_DIN127_M10
+7x nut_thin_ISO4035_M10
+
+2x screw_M4
+2x washer_spring_lock_DIN127_M4
+2x nut_DIN934_M4
+
+
++ spring washer m10 in m4
++ šrauf m4
++ assembly
