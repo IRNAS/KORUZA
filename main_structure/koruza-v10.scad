@@ -202,7 +202,7 @@ module aiming_laser(){
 	cylinder(h=50,r=3,center=true,$fn=res);
 }
 
-translate([laser_offset,0,-5]) aiming_laser();
+//translate([laser_offset,0,-5]) aiming_laser();
 
 module aiming_laser_space(){
 	//movement space
@@ -375,24 +375,27 @@ module holding_screws(){
 in_ring_screw_l=37;
 
 module inner_ring_screws(){
+    // define nut depth for all screws in this etup
+    nut_depth_inner=9;
+    
     translate([0,0,1]){
-    translate([-(35-3),17,-14]) rotate([0,180,0]) screw_din912_nut_din562_out(l=in_ring_screw_l,n_t=4,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
-    translate([-(35-3),-17,-14]) rotate([0,180,0]) screw_din912_nut_din562_out(l=in_ring_screw_l,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
+    translate([-(35-3),17,-14]) rotate([0,180,0]) screw_din912_nut_din562_out(l=in_ring_screw_l,n_t=4,d=3,nut_depth=nut_depth_inner,screw_path=50,nut_path=30,fit=1.1,res=20);
+    translate([-(35-3),-17,-14]) rotate([0,180,0]) screw_din912_nut_din562_out(l=in_ring_screw_l,d=3,nut_depth=nut_depth_inner,screw_path=50,nut_path=30,fit=1.1,res=20);
     
     rotate([0,0,180]){
-        translate([-(35-3),17,-14]) rotate([0,180,0]) screw_din912_nut_din562_out(l=in_ring_screw_l,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
-        translate([-(35-3),-17,-14]) rotate([0,180,0]) screw_din912_nut_din562_out(l=in_ring_screw_l,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
+        translate([-(35-3),17,-14]) rotate([0,180,0]) screw_din912_nut_din562_out(l=in_ring_screw_l,d=3,nut_depth=nut_depth_inner,screw_path=50,nut_path=30,fit=1.1,res=20);
+        translate([-(35-3),-17,-14]) rotate([0,180,0]) screw_din912_nut_din562_out(l=in_ring_screw_l,d=3,nut_depth=nut_depth_inner,screw_path=50,nut_path=30,fit=1.1,res=20);
     }
     rotate([0,0,90]){
-        translate([-(35-3),17,-14]) rotate([0,180,0]) screw_din912_nut_din562_out(l=in_ring_screw_l,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
-        translate([-(35-3),-17,-14]) rotate([0,180,0]) screw_din912_nut_din562_out(l=in_ring_screw_l,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
+        translate([-(35-3),17,-14]) rotate([0,180,0]) screw_din912_nut_din562_out(l=in_ring_screw_l,d=3,nut_depth=nut_depth_inner,screw_path=50,nut_path=30,fit=1.1,res=20);
+        translate([-(35-3),-17,-14]) rotate([0,180,0]) screw_din912_nut_din562_out(l=in_ring_screw_l,d=3,nut_depth=nut_depth_inner,screw_path=50,nut_path=30,fit=1.1,res=20);
     }
     rotate([0,0,-90]){
-        translate([-(35-3),17,-14]) rotate([0,180,0]) screw_din912_nut_din562_out(l=in_ring_screw_l,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
-        translate([-(35-3),-17,-14]) rotate([0,180,0]) screw_din912_nut_din562_out(l=in_ring_screw_l,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
+        translate([-(35-3),17,-14]) rotate([0,180,0]) screw_din912_nut_din562_out(l=in_ring_screw_l,d=3,nut_depth=nut_depth_inner,screw_path=50,nut_path=30,fit=1.1,res=20);
+        translate([-(35-3),-17,-14]) rotate([0,180,0]) screw_din912_nut_din562_out(l=in_ring_screw_l,d=3,nut_depth=nut_depth_inner,screw_path=50,nut_path=30,fit=1.1,res=20);
     }
     rotate([0,0,-90]){
-        translate([-(35-3),7,-14]) rotate([0,180,0]) screw_din912_nut_din562_out(l=in_ring_screw_l,d=3,nut_depth=5,screw_path=50,nut_path=30,fit=1.1,res=20);
+        translate([-(35-3),7,-14]) rotate([0,180,0]) screw_din912_nut_din562_out(l=in_ring_screw_l,d=3,nut_depth=nut_depth_inner,screw_path=50,nut_path=30,fit=1.1,res=20);
     }
     }
 }
@@ -541,6 +544,7 @@ module part_laser_mount(){
         translate([laser_offset,0,-(5+lens_thickness+lens_mounting_ring_t)]) aiming_laser();
         translate([laser_offset,0,-(5+lens_thickness+lens_mounting_ring_t)]) aiming_laser_space();
         rods(rod_diameter,rod_diameter_tolerance);
+        // screws for mounting the parts together
         translate([0,0,-(lens_thickness+lens_mounting_ring_t)])inner_ring_screws();
         //space for wedges
         translate([-39,-19.5,29-5]) cube([24,39,10.1]);
@@ -562,7 +566,7 @@ module part_laser_mount(){
     }
 }
 
-//part_laser_mount();
+part_laser_mount();
 
 //////////////////////////////////////////////////////////////////////////////
 // sfp_mount
