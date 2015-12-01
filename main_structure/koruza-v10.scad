@@ -59,6 +59,7 @@ module beam_path(){
 //translate([offset,0,0]) beam_path();
 
 //////////////////////////////////////////////////////////////////////////////
+
 // stacking rods
 rod_diameter = 8;
 rod_length = 185;
@@ -68,6 +69,7 @@ rod_offset_x_b = 18;
 rod_offset_y_b = 25;
 rod_offset_z = -10;
 rod_diameter_tolerance=0.2;
+
 
 module rods(diameter,tolerance){
     for (i = [[-rod_offset_x_t,-rod_offset_y_t,0],[rod_offset_x_b,-rod_offset_y_b,0],[-rod_offset_x_t,rod_offset_y_t,0],[rod_offset_x_b,rod_offset_y_b,0]]){
@@ -94,17 +96,17 @@ module rods_plate_sfp(diameter,tolerance){
     difference(){
         union(){
         hull(){
-            for (i = [[-rod_offset_x_t,-rod_offset_y_t,0],[rod_offset_x_b+10,-rod_offset_y_b+2,0],[-rod_offset_x_t,rod_offset_y_t,0],[rod_offset_x_b+10,rod_offset_y_b-2,0]]){
+            for (i = [[-rod_offset_x_t,-rod_offset_y_t,0],[rod_offset_x_b+12,-rod_offset_y_b+2,0],[-rod_offset_x_t,rod_offset_y_t,0],[rod_offset_x_b+12,rod_offset_y_b-2,0]]){
                 translate([offset,0,rod_offset_z]) translate(i) cylinder(h=14,r=(diameter+4+tolerance)/2,center=false,$fn=res);
             }
         }
         hull(){
             translate([offset,0,rod_offset_z]) translate([-rod_offset_x_t,-rod_offset_y_t,0]) cylinder(h=50,r=(diameter+4+tolerance)/2,center=false,$fn=res);
-            translate([offset,0,rod_offset_z]) translate([rod_offset_x_b+10,-rod_offset_y_b+2,0]) cylinder(h=14,r=(diameter+4+tolerance)/2,center=false,$fn=res);
+            translate([offset,0,rod_offset_z]) translate([rod_offset_x_b+12,-rod_offset_y_b+2,0]) cylinder(h=14,r=(diameter+4+tolerance)/2,center=false,$fn=res);
         }
         hull(){
             translate([offset,0,rod_offset_z]) translate([-rod_offset_x_t,rod_offset_y_t,0]) cylinder(h=50,r=(diameter+4+tolerance)/2,center=false,$fn=res);
-            translate([offset,0,rod_offset_z]) translate([rod_offset_x_b+10,rod_offset_y_b-2,0]) cylinder(h=14,r=(diameter+4+tolerance)/2,center=false,$fn=res);
+            translate([offset,0,rod_offset_z]) translate([rod_offset_x_b+12,rod_offset_y_b-2,0]) cylinder(h=14,r=(diameter+4+tolerance)/2,center=false,$fn=res);
         }
         hull(){
             for (i = [[-rod_offset_x_t,rod_offset_y_t,0],[-rod_offset_x_t,-rod_offset_y_t,0]]){
@@ -121,7 +123,7 @@ module rods_plate_sfp(diameter,tolerance){
 module rods_plate_single_bot(diameter,tolerance){
     difference(){
          hull(){
-        for (i = [[rod_offset_x_b,-rod_offset_y_t,0],[rod_offset_x_b+10,-rod_offset_y_b,0],[rod_offset_x_b,rod_offset_y_t,0],[rod_offset_x_b+10,rod_offset_y_b,0]]){
+        for (i = [[rod_offset_x_b,-rod_offset_y_t+2,0],[rod_offset_x_b+16,-rod_offset_y_b,0],[rod_offset_x_b,rod_offset_y_t-2,0],[rod_offset_x_b+16,rod_offset_y_b,0]]){
                 translate([offset,0,0]) translate(i) cylinder(h=10,r=(diameter+4+tolerance)/2,center=false,$fn=res);
             }
         }
@@ -275,12 +277,12 @@ module sfp_module(){
 // focus adjustment stepper motor
 
 module f_stepper(){
-		translate([38,0,-3]) // here is defined the position of the t stepper
+		translate([37,0,41]) // here is defined the position of the t stepper
 		rotate(a=[0,180,90])
-		stepper_mounted2(n_l=30,n_d=7,n_rot1=0,n_rot2=0,screw=2,n_w=7,n_z=2.5,screw_w=3, res=res);
+        stepper_mounted2(n_l=78,n_rot1=0,n_rot2=0,n_d=8,screw=1, res=res,n_rot3=180,s_rot1=0);
 }
 
-//translate([0,0,100]) f_stepper();
+translate([0,0,100]) f_stepper();
 
 module xy_motors(){
 		translate([-100+5+16,-25,-12])
@@ -456,7 +458,7 @@ module part_mounting_ring_inner(){
     }
 }
 
-//part_mounting_ring_inner();
+part_mounting_ring_inner();
 
 //////////////////////////////////////////////////////////////////////////////
 // mounting ring outside
@@ -473,7 +475,7 @@ module part_mounting_ring_outer(){
     }
 }
 
-part_mounting_ring_outer();
+//part_mounting_ring_outer();
 
 
 //////////////////////////////////////////////////////////////////////////////
@@ -527,7 +529,7 @@ module part_lens_mount_outer(){
     }
 }
 
-part_lens_mount_outer();
+//part_lens_mount_outer();
 
 
 //////////////////////////////////////////////////////////////////////////////
@@ -559,13 +561,19 @@ module part_laser_mount(){
         translate([-44,0,34-5]) rotate(a=[0,90,0])cylinder(h=12,r=3.3,center=false,$fn=res);
         //square hole for nut
         translate([-44+6,0,34-5])cube([12,6,6],center=true);
-        //hole for the fix screw
+        //hole for the set screw
         translate([-54,0,34-5]) rotate(a=[0,90,0])cylinder(h=20,r=1.5,center=false,$fn=res);
         //cutout for the laser to come in
         translate([laser_offset,0,lens_thickness+lens_mounting_ring_t]) aiming_laser_space();
+        //cutout for focus screw and bearing
+        translate([37,0,30])cylinder(h=30,r=14/2,center=true,$fn=res);
+        //cutout for bearing flange
+        translate([37,0,26])cylinder(h=1,r=16/2,center=true,$fn=res);
+        //holes for fixing the bearing
+        translate([34,11,27]) rotate([0,0,0]) screw_din912_nut_din562(l=16,d=3,nut_depth=9,screw_path=50,nut_path=30,fit=1.1,res=20);
+        translate([34,-11,27]) rotate([0,0,0]) screw_din912_nut_din562(l=16,d=3,nut_depth=9,screw_path=50,nut_path=30,fit=1.1,res=20);
     }
 }
-
 part_laser_mount();
 
 //////////////////////////////////////////////////////////////////////////////
@@ -574,7 +582,7 @@ module part_sfp_mount(){
     difference(){
         translate([0,0,lens_bfl+lens_thickness+lens_mounting_ring_t-19]) rods_plate_sfp(10,rod_diameter_tolerance);
         translate([0,0,lens_bfl+lens_thickness+lens_mounting_ring_t-10]) sfp_screws();
-        translate([0,0,97]) f_stepper();
+        translate([0,0,100]) f_stepper();
         translate([offset,0,lens_bfl+lens_thickness+lens_mounting_ring_t-30])cylinder(h=15,r=13,center=false,$fn=res);
         difference(){
             translate([offset,0,lens_bfl+lens_thickness+lens_mounting_ring_t-15])cylinder(h=50,r=20,center=false,$fn=res);
@@ -582,9 +590,10 @@ module part_sfp_mount(){
             translate([offset-20+4.15,8,lens_bfl+lens_thickness+lens_mounting_ring_t])cube([10,12,50]); // recess for pcb to sit in
         }
     //sfp tab access hole
-    translate([10,0,lens_bfl+lens_thickness+lens_mounting_ring_t-15]) rotate(a=[0,-90,0]) cylinder(h=50,r=8,center=false,$fn=res);
+    translate([10,0,lens_bfl+lens_thickness+lens_mounting_ring_t-15]) rotate(a=[0,-90,0]) cylinder(h=50,r=11,center=false,$fn=res);
+    translate([0,0,lens_bfl+lens_thickness+lens_mounting_ring_t-25]) cube([30,22,20],center=true,$fn=res);
     //sfp board fix screw
-    translate([-11+5,7.5+5.3,lens_bfl+lens_thickness+lens_mounting_ring_t+21-5]) rotate(a=[0,-90,]) screw_din912_nut_din562(l=16,d=3,nut_depth=1,screw_path=50,nut_path=30,fit=1.2,res=20);
+    translate([-11+8,7.5+5.3,lens_bfl+lens_thickness+lens_mounting_ring_t+21-5]) rotate(a=[0,-90,]) screw_din912_nut_din562(l=16,d=3,nut_depth=1,screw_path=50,nut_path=30,fit=1.2,res=20);
  
     }
     //translate([offset-20.1,8,lens_bfl+lens_thickness+lens_mounting_ring_t-15])cube([10.1,12,35]);
@@ -606,9 +615,10 @@ module part_motor_mount(){
             translate([45-16,45-16,222])cylinder(h=3,r=4,center=false,$fn=res);
             translate([45-25,45-5.5,222])cylinder(h=3,r=4,center=false,$fn=res);
         }
-        translate([37.6+7,7,160]) cube([20,8,74]); // grove for cables
-        translate([37.6+5,7,160]) rotate(a=[0,15,0])  cube([20,8,74]); // grrove for cables;
-        translate([-30,-21,160]) cube([20,10,74]); // grrove for cables
+        translate([37.6+7,7,160]) cube([20,8,74]); 
+        translate([37.6+5,7,160]) rotate(a=[0,15,0])  cube([20,8,74]);
+        // groove for cables
+        translate([-30,-21,160]) cube([25,10,74]);
         translate([48.6,48,200]) xy_motors();
         rods(rod_diameter,rod_diameter_tolerance);
         //holes for PCB board
@@ -637,12 +647,18 @@ part_motor_mount();
 // sfp_spring_mount
 module part_sfp_spring_mount(){
     difference(){
-        translate([0,0,73]) rods_plate_single_bot(8,rod_diameter_tolerance);
-        translate([0,0,124]) f_stepper();
+        translate([0,0,75]) rods_plate_single_bot(8,rod_diameter_tolerance);
         rods(rod_diameter,rod_diameter_tolerance);
+        //hole for the bearing
+        translate([39,0,50])cylinder(h=100,r=13/2,center=true,$fn=res);
+        //hole for the bearing retaining edge
+        translate([39,0,75])cylinder(h=1,r=18/2,center=true,$fn=res);
+        // space of the optical beam
+        translate([offset,0,10]) cylinder(h=80,r=40/2,center=false,$fn=res);
     }
 }
-translate([0,0,-24]) part_sfp_spring_mount();
+//translate([0,0,-24]) part_sfp_spring_mount();
+
 
 //////////////////////////////////////////////////////////////////////////////
 // sfp_spring_mount
