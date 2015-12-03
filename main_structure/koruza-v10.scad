@@ -565,10 +565,10 @@ module part_laser_mount(){
         translate([-54,0,34-5]) rotate(a=[0,90,0])cylinder(h=20,r=1.5,center=false,$fn=res);
         //cutout for the laser to come in
         translate([laser_offset,0,lens_thickness+lens_mounting_ring_t]) aiming_laser_space();
-        //cutout for focus screw and bearing
-        translate([37,0,30])cylinder(h=30,r=14/2,center=true,$fn=res);
+        //cutout for focus screw
+        translate([37,0,30])cylinder(h=20,r=12/2,center=true,$fn=res);
         //cutout for bearing flange
-        translate([37,0,26])cylinder(h=1,r=16/2,center=true,$fn=res);
+        translate([37,0,26])cylinder(h=1,r=19/2,center=true,$fn=res);
         //holes for fixing the bearing
         translate([34,11,27]) rotate([0,0,0]) screw_din912_nut_din562(l=16,d=3,nut_depth=9,screw_path=50,nut_path=30,fit=1.1,res=20);
         translate([34,-11,27]) rotate([0,0,0]) screw_din912_nut_din562(l=16,d=3,nut_depth=9,screw_path=50,nut_path=30,fit=1.1,res=20);

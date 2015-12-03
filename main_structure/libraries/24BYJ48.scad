@@ -104,7 +104,7 @@ module stepper_mounted(n_l=45,n_d=5,n_rot1=45,n_rot2=-135,n_w=7.2,n_z=2.5,screw_
     }
 }
 
-module stepper_mounted2(n_l=47,n_d=5,n_rot1=45,n_rot2=-135,n_w=8,n_z=8,screw_w=4,screw=2,res=30,scaling=1,n_rot3=0,s_rot1=0){
+module stepper_mounted2(n_l=47,n_d=5,n_rot1=45,n_rot2=-135,n_w=8,n_z=3.5,screw_w=4,screw=2,res=30,scaling=1,n_rot3=0,s_rot1=0){
     module 24byj48() {
         scaling=1.1;//scaling for 3d print fit
         //body
