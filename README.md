@@ -1,7 +1,13 @@
 Wireless optical system KORUZA
 ======
 
-The repository is being step by step filled with subsystems. At the moment consider information extremely alpha.
+In this repository you can find documentation with all the plans for mechanical and electronic KORUZA parts.
+
+Check  repository [koruza-instructions](https://github.com/IRNAS/KORUZA-instructions) if you are looking for documentation on how to assemble and use Koruza system. See [project website](http://koruza.net/) for complete specification and introduction.
+
+Should you need any support with KORUZA system, get in touch with Institute IRNAS team and others involved in the project via [chat](https://chat.irnas.eu/) or [forum](http://forum.irnas.eu/).
+
+---
 
 ## Licensing
 
