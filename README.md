@@ -7,6 +7,9 @@ Check  repository [koruza-instructions](https://github.com/IRNAS/KORUZA-instruct
 
 Should you need any support with KORUZA system, get in touch with Institute IRNAS team and others involved in the project via [chat](https://chat.irnas.eu/) or [forum](http://forum.irnas.eu/).
 
+##Buy
+You can order KORUZA KIT and pre-assembled KORUZA KIT from our partner company [Fabrikor](http://fabrikor.eu/index.php?route=product/category&path=60).
+
 ---
 
 ## Licensing
@@ -34,7 +37,7 @@ You are required to distribute the license along with the documentation or modif
 
 ## Copyright
 
-Copyright Institute IRNAS Rače 2015. 
+Copyright Institute IRNAS Rače 2016. 
 
 This documentation describes Open Hardware and is licensed under the CERN OHL v. 1.2.
 You may redistribute and modify this documentation under the terms of the [CERN OHL v.1.2.](http://ohwr.org/cernohl). This documentation is distributed WITHOUT ANY EXPRESS OR IMPLIED  WARRANTY, INCLUDING OF MERCHANTABILITY, SATISFACTORY QUALITY AND FITNESS FOR A PARTICULAR PURPOSE. Please see the CERN  OHL  v.1.2 for applicable conditions.
