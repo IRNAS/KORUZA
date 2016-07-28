@@ -1,0 +1,14 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [SFPextensionSplit.PrjPcb]
+   Generated File[SFPextensionSplit-RoundHoles.TXT]
+   Generated File[SFPextensionSplit-SlotHoles.TXT]
+   Generated File[SFPextensionSplit.DRL]
+   Generated File[SFPextensionSplit.LDP]
+   Generated File[SFPextensionSplit.DRR]
+
+
+Files Generated   : 5
+Documents Printed : 0
+
+Finished Output Generation At 13:20:41 On 28.7.2016

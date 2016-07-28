@@ -1,0 +1,25 @@
+---------------------------------------------------------------------------
+NCDrill File Report For: SFPextensionSplit.PcbDoc   28.7.2016  13:20:41
+---------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : SFPextensionSplit-RoundHoles.TXT
+ASCII SlotHoles File : SFPextensionSplit-SlotHoles.TXT
+EIA File   : SFPextensionSplit.DRL
+
+Tool         Hole Size           Hole Type     Hole Count Plated       Tool Travel
+---------------------------------------------------------------------------
+T1        15mil (0.381mm)          Round          74               11.05 Inch (280.60 mm)
+T2        28mil (0.7112mm)         Round          12               2.70 Inch (68.49 mm)
+T3        30mil (0.762mm)          Round          1                0.00 Inch (0.00 mm)
+T4        39.8mil (1.01092mm)      Round          9                0.80 Inch (20.32 mm)
+T5        41.3mil (1.04902mm)      Round          17               4.73 Inch (120.06 mm)
+T6        42mil (1.0668mm)         Round          4                1.84 Inch (46.81 mm)
+T7        50mil (1.27mm)           Round          2                0.52 Inch (13.28 mm)
+T8        50mil (1.27mm)           Slot           3                0.55 Inch (14.02 mm)
+T9        61mil (1.5494mm)         Round          2                0.38 Inch (9.63 mm)
+T10       126mil (3.2004mm)        Round          1         NPTH   0.00 Inch (0.00 mm)
+---------------------------------------------------------------------------
+Totals                                            125              22.57 Inch (573.20 mm)
+
+Total Processing Time (hh:mm:ss) : 00:00:00
