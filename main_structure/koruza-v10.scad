@@ -424,7 +424,7 @@ module sfp_screws(){
 
 // ACTUAL PARTS
 //////////////////////////////////////////////////////////////////////////////
-
+// for SC modules
 module sfp_mount_bracket(){
     thickness=10;
     difference(){
@@ -445,7 +445,25 @@ module sfp_mount_bracket(){
 
 }
 
-
+//for LC modules
+module sfp_mount_bracket_lc(){
+    thickness=10;
+    difference(){
+        translate([offset,0,0])cylinder(h=thickness,r=19,center=false,$fn=res);
+        translate([-10-11,-25,0]) cube([20,50,thickness]); // to cut of the cylinder on one edge
+        cutout_x=11.45;
+        cutout_y=14.15;
+        translate([offset+0.6,4,0]){
+            translate([0,0,thickness/2]) cube([cutout_x,cutout_y,thickness],center=true);
+            translate([(cutout_x-1)/2,(cutout_y-1)/2,0])cylinder(h=18.1,r=1.7,center=false,$fn=res);
+            translate([-(cutout_x-1)/2,(cutout_y-1)/2,0])cylinder(h=18.1,r=1.7,center=false,$fn=res);
+            translate([(cutout_x-1)/2,-(cutout_y-1)/2,0])cylinder(h=18.1,r=1.7,center=false,$fn=res);
+            translate([-(cutout_x-1)/2,-(cutout_y-1)/2,0])cylinder(h=18.1,r=1.7,center=false,$fn=res);
+        }
+        translate([0,0,thickness-3]) sfp_screws();
+        translate([24,0,thickness/2]) rotate(a=[180,-90,0]) screw_din912_nut_din562(l=12,d=3,nut_depth=6,screw_path=50,nut_path=30,fit=1.1,res=20); // set screw
+    }
+}
 //translate([0,0,80]) sfp_mount_bracket();
 
 // mounting ring inside
@@ -594,6 +612,27 @@ module part_sfp_mount(){
     translate([0,0,lens_bfl+lens_thickness+lens_mounting_ring_t-25]) cube([30,22,20],center=true,$fn=res);
     //sfp board fix screw
     translate([-11+8,7.5+5.3,lens_bfl+lens_thickness+lens_mounting_ring_t+21-5]) rotate(a=[0,-90,]) screw_din912_nut_din562(l=16,d=3,nut_depth=1,screw_path=50,nut_path=30,fit=1.2,res=20);
+ 
+    }
+    //translate([offset-20.1,8,lens_bfl+lens_thickness+lens_mounting_ring_t-15])cube([10.1,12,35]);
+}
+
+module part_sfp_mount_lc(){
+    difference(){
+        translate([0,0,lens_bfl+lens_thickness+lens_mounting_ring_t-19]) rods_plate_sfp(10,rod_diameter_tolerance);
+        translate([0,0,lens_bfl+lens_thickness+lens_mounting_ring_t-10]) sfp_screws();
+        translate([0,0,100]) f_stepper();
+        translate([offset,0,lens_bfl+lens_thickness+lens_mounting_ring_t-30])cylinder(h=15,r=13,center=false,$fn=res);
+        difference(){
+            translate([offset,0,lens_bfl+lens_thickness+lens_mounting_ring_t-15])cylinder(h=50,r=20,center=false,$fn=res);
+            translate([offset-20,-20,lens_bfl+lens_thickness+lens_mounting_ring_t-15])cube([10,40,50]);
+            translate([offset-20+5.1,8+4.5,lens_bfl+lens_thickness+lens_mounting_ring_t])cube([10,12,50]); // recess for pcb to sit in
+        }
+    //sfp tab access hole
+    translate([10,0,lens_bfl+lens_thickness+lens_mounting_ring_t-15]) rotate(a=[0,-90,0]) cylinder(h=50,r=11,center=false,$fn=res);
+    translate([0,0,lens_bfl+lens_thickness+lens_mounting_ring_t-25]) cube([30,22,20],center=true,$fn=res);
+    //sfp board fix screw
+    translate([-11+8,7.5+5.3+4.5,lens_bfl+lens_thickness+lens_mounting_ring_t+21-5]) rotate(a=[0,-90,]) screw_din912_nut_din562(l=16,d=3,nut_depth=1,screw_path=50,nut_path=30,fit=1.2,res=20);
  
     }
     //translate([offset-20.1,8,lens_bfl+lens_thickness+lens_mounting_ring_t-15])cube([10.1,12,35]);
