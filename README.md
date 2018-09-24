@@ -5,10 +5,7 @@ In this repository you can find documentation with all the plans for mechanical 
 
 Check  repository [koruza-instructions](https://github.com/IRNAS/KORUZA-instructions) if you are looking for documentation on how to assemble and use Koruza system. See [project website](http://koruza.net/) for complete specification and introduction.
 
-Should you need any support with KORUZA system, get in touch with Institute IRNAS team and others involved in the project via [chat](https://chat.irnas.eu/) or [forum](http://forum.irnas.eu/).
-
-##Buy
-You can order KORUZA KIT and pre-assembled KORUZA KIT from our partner company [Fabrikor](http://fabrikor.eu/index.php?route=product/category&path=60).
+Should you need any support with KORUZA system, get in touch with Institute IRNAS team. Please note that this version of the system is no longer actively supported.
 
 ---
 
